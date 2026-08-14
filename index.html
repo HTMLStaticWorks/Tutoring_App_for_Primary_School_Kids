@@ -1,1 +1,452 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightSparks Tutoring | Primary School Learning & Parent Dashboard</title>
+  <meta name="description"
+    content="A child-friendly tutoring platform for primary school students with animated lessons, interactive quizzes, and a comprehensive parent monitoring dashboard." />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+</head>
+
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
+        <span>BrightSparks</span>
+      </a>
+
+      <nav class="nav-menu">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link active">Home ▾</a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">Home 1 (Playful)</a>
+            <a href="home-2.html" class="dropdown-item">Home 2 (Academic)</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">Programs</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="fun.html" class="nav-link">Fun Zone</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="pricing-booking.html" class="nav-link">Pricing</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="support.html" class="nav-link">Support</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">Dashboard ▾</a>
+          <div class="dropdown-menu">
+            <a href="parentdashboard.html" class="dropdown-item">Parent</a>
+            <a href="dashboard.html" class="dropdown-item">Admin</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex items-center" style="gap: 0.65rem;">
+        <button class="theme-toggle-btn btn btn-outline btn-sm" title="Toggle Dark Mode"></button>
+        <button class="btn btn-outline btn-sm" title="Toggle RTL">RTL</button>
+        <a href="auth.html" class="btn btn-primary btn-sm">Log In</a>
+        <button id="mobile-menu-open" class="mobile-menu-btn" title="Open Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="flex items-center justify-between" style="margin-bottom: 1.5rem;">
+      <span class="heading-sm">Menu Navigation</span>
+      <button id="mobile-menu-close" style="font-size: 1.5rem;">✕</button>
+    </div>
+    <ul class="flex flex-col" style="gap: 1rem;">
+      <li><a href="index.html" class="nav-link">Home 1 (Playful)</a></li>
+      <li><a href="home-2.html" class="nav-link">Home 2 (Academic)</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Programs</a></li>
+      <li><a href="fun.html" class="nav-link">Fun Zone</a></li>
+      <li><a href="pricing-booking.html" class="nav-link">Pricing</a></li>
+      <li><a href="support.html" class="nav-link">Support</a></li>
+      <li><a href="parentdashboard.html" class="nav-link">Parent</a></li>
+      <li><a href="dashboard.html" class="nav-link">Admin</a></li>
+      <li><a href="auth.html" class="nav-link">Sign In / Register</a></li>
+    </ul>
+  </div>
+
+  <main style="padding-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <span>Voted #1 Primary Tutoring Platform</span>
+            </div>
+            <h1 class="heading-xl" style="margin-bottom: 1.25rem;">
+              Turn Primary Homework Into <span class="text-gradient-primary">Playful Adventures!</span>
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem;">
+              Interactive K-5 micro-lessons, live 1-on-1 certified teachers, gamified star rewards, and real-time parent
+              progress tracking.
+            </p>
+            <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+              <a href="pricing-booking.html" class="btn btn-primary btn-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                  <path
+                    d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-3.05 11a22.35 22.35 0 0 1-3.95 2z" />
+                </svg>
+                <span>Schedule Free Trial Session</span>
+              </a>
+              <a href="dashboard.html" class="btn btn-outline btn-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                <span>Explore Student Demo</span>
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Happy Primary Students</div>
+              </div>
+              <div>
+                <div class="stat-number">98.4%</div>
+                <div class="stat-label">Parent Satisfaction Rate</div>
+              </div>
+              <div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Ad-Free Safe Screen</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Graphic Card -->
+          <div class="card card-hover"
+            style="border: 2px solid var(--primary-light); background: linear-gradient(135deg, #FFFFFF, #F3E8FF);">
+            <div class="flex items-center justify-between" style="margin-bottom: 1.5rem;">
+              <div class="badge badge-amber flex items-center" style="gap: 0.35rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                <span>Active Lesson Preview</span>
+              </div>
+              <span style="font-weight: 700; color: var(--primary);">Grade 3 Math</span>
+            </div>
+            <h3 class="heading-sm" style="margin-bottom: 0.75rem;">Pirate Treasure Fractions</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+              "Help Captain Sandy divide 24 gold coins into 4 equal chests..."
+            </p>
+            <div
+              style="background: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+              <div class="flex justify-between items-center"
+                style="margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 700;">
+                <span>Daily Learning Progress</span>
+                <span class="user-stars-count flex items-center" style="gap: 0.35rem;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B">
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <span>340 Star Coins</span>
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 12px; background: var(--border-color); border-radius: 6px; overflow: hidden;">
+                <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #6340B5, #06B6D4);"></div>
+              </div>
+            </div>
+            <a href="dashboard.html" class="btn btn-amber flex justify-center items-center"
+              style="width: 100%; gap: 0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+              <span>Play Interactive Quiz Now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-purple" style="margin-bottom: 0.75rem;">Simple 4-Step Journey</div>
+          <h2 class="heading-lg">How BrightSparks Accelerated Primary Learning</h2>
+        </div>
+
+        <div class="grid-4">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Skill Diagnostic</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Adaptive placement quiz assesses current math &
+              reading grade level.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="heading-sm" style="margin-bottom: 0.5rem;">15-Min Lessons</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Bite-sized animated lessons designed for young
+              attention spans.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Gamified Quizzes</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Earn Star Coins, unlock avatar outfits, and level up
+              weekly.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Parent Insights</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Real-time progress scorecards & screen-time limit
+              controls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Subjects Section -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-primary" style="margin-bottom: 0.75rem;">K-5 Core Subjects</div>
+          <h2 class="heading-lg">Tailored Learning for Young Minds</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="subject-card">
+            <div>
+              <div class="subject-icon-box" style="background: #EEF2FF; color: #6340B5;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2" />
+                  <line x1="8" y1="6" x2="16" y2="6" />
+                  <line x1="16" y1="14" x2="16" y2="18" />
+                  <path d="M16 10h.01" />
+                  <path d="M12 10h.01" />
+                  <path d="M8 10h.01" />
+                  <path d="M12 14h.01" />
+                  <path d="M8 14h.01" />
+                  <path d="M12 18h.01" />
+                  <path d="M8 18h.01" />
+                </svg>
+              </div>
+              <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Primary Mathematics</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+                Visual arithmetic, fractions with pizza cuts, times-tables games, and spatial geometry.
+              </p>
+            </div>
+            <a href="services.html" class="btn btn-outline btn-sm">Explore Math Syllabus ➔</a>
+          </div>
+
+          <div class="subject-card">
+            <div>
+              <div class="subject-icon-box" style="background: #D1FAE5; color: #10B981;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </div>
+              <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Phonics & Creative Reading</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+                Sound blending, silent letter detectives, storybook adventures, and vocabulary growth.
+              </p>
+            </div>
+            <a href="services.html" class="btn btn-outline btn-sm">Explore Reading Syllabus ➔</a>
+          </div>
+
+          <div class="subject-card">
+            <div>
+              <div class="subject-icon-box" style="background: #F3E8FF; color: #8B5CF6;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55A1 1 0 0 0 5.607 22h12.786a1 1 0 0 0 .886-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+                  <line x1="8.5" y1="2" x2="15.5" y2="2" />
+                </svg>
+              </div>
+              <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Science & Space Explorers</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+                Animated solar system orbits, water cycle journeys, plant life, and gravity labs.
+              </p>
+            </div>
+            <a href="services.html" class="btn btn-outline btn-sm">Explore Science Syllabus ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parent Peace of Mind CTA Banner -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #0F172A, #1E293B); color: #fff;">
+      <div class="container text-center" style="max-width: 800px;">
+        <div class="badge badge-amber" style="margin-bottom: 1rem;">Parent Dashboard Included</div>
+        <h2 class="heading-lg" style="color: #fff; margin-bottom: 1.25rem;">
+          Track Every Single Star, Quiz Score & Screen Minute
+        </h2>
+        <p style="color: #94A3B8; font-size: 1.1rem; margin-bottom: 2rem;">
+          Receive automated weekly progress digests, monitor live teacher feedback notes, and customize daily learning
+          time bounds.
+        </p>
+        <div class="flex justify-center" style="gap: 1rem; flex-wrap: wrap;">
+          <a href="parentdashboard.html" class="btn btn-secondary btn-lg flex items-center" style="gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+            <span>View Parent Portal Demo</span>
+          </a>
+          <a href="pricing-booking.html" class="btn btn-outline btn-lg"
+            style="color: #fff; border-color: #334155;">Schedule 1-on-1 Trial</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- User Recommended Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 1. Brand Area -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="color: #fff;">
+            <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
+            <span>BrightSparks</span>
+          </a>
+          <p class="footer-tagline">Making learning bright, one spark at a time.</p>
+          <div class="social-pills">
+            <a href="javascript:void(0)" class="social-pill" title="Facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="social-pill" title="Twitter / X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="social-pill" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Learning -->
+        <div>
+          <h4 class="footer-title">Learning</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Subjects</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="dashboard.html">Quizzes & Lessons</a></li>
+            <li><a href="parentdashboard.html">Progress Tracking</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Parents -->
+        <div>
+          <h4 class="footer-title">Parents</h4>
+          <ul class="footer-links">
+            <li><a href="parentdashboard.html">Parent Dashboard</a></li>
+            <li><a href="pricing-booking.html">Subscriptions</a></li>
+            <li><a href="support.html#faq">FAQ</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- 4. Newsletter & Social Logins -->
+        <div>
+          <h4 class="footer-title">Stay Connected</h4>
+          <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 0.75rem;">
+            Subscribe to our weekly learning digest.
+          </p>
+          <form class="footer-newsletter"
+            onsubmit="event.preventDefault(); showToast('Subscribed to weekly digest!'); this.reset();">
+            <div class="flex" style="gap: 0.5rem; margin-bottom: 0.75rem;">
+              <input type="email" required placeholder="Enter email" style="margin-bottom: 0;" />
+              <button type="submit" class="btn btn-primary btn-sm flex items-center justify-center"
+                style="white-space: nowrap;">
+                <span>Join</span>
+              </button>
+            </div>
+          </form>
+          <div style="font-size: 0.8rem; color: #64748B; margin-bottom: 0.5rem;">Or quick login with:</div>
+          <div class="flex" style="gap: 0.5rem;">
+            <a href="auth.html" class="social-login-btn" title="Sign in with Google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
+              </svg>
+            </a>
+            <a href="auth.html" class="social-login-btn" title="Sign in with Apple">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.98 1.07.08 2.15-.58 2.81-1.38z" />
+              </svg>
+            </a>
+            <a href="auth.html" class="social-login-btn" title="Sign in with Microsoft">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>© 2026 BrightSparks. All rights reserved.</div>
+        <div class="flex" style="gap: 1.25rem;">
+          <a href="support.html">Privacy Policy</a>
+          <a href="support.html">Terms of Use</a>
+          <a href="support.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

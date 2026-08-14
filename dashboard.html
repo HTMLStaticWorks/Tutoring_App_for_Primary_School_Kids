@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform Management & Monitoring Dashboard | BrightSparks</title>
+  <meta name="description"
+    content="Comprehensive platform management dashboard for parents to monitor student details and progress, and for administrators to manage students, lessons, quizzes, and subscriptions." />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+</head>
+
+<body>
+
+  <!-- Dashboard Site Header (No main nav menu, with Theme, RTL, and Logout redirecting to Home) -->
+  <header class="site-header">
+    <div class="container flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
+        <span>BrightSparks</span>
+      </a>
+
+      <div class="flex items-center" style="gap: 0.65rem;">
+        <button class="theme-toggle-btn btn btn-outline btn-sm" title="Toggle Dark Mode"></button>
+        <button class="btn btn-outline btn-sm" title="Toggle RTL">RTL</button>
+        <a href="index.html" class="btn btn-outline btn-sm flex items-center" style="gap: 0.35rem;"
+          onclick="showToast('Logged out successfully! Redirecting to Home...', '👋');">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+          <span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 80px;">
+    <section class="section-padding" style="background: var(--bg-page); min-height: 85vh;">
+      <div class="container">
+
+        <!-- Top Platform Mode Control Bar -->
+        <div class="card"
+          style="margin-bottom: 2rem; border-color: var(--primary-light); background: linear-gradient(135deg, #FFFFFF, #F3E8FF);">
+          <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div class="badge badge-primary" style="margin-bottom: 0.25rem;">BrightSparks Management Hub</div>
+              <h1 class="heading-md">Platform Operations & Learning Dashboard</h1>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">Monitor student progress, track scores, manage
+                curriculum, parents, and subscriptions.</p>
+            </div>
+
+            <!-- Dashboard Role Switcher Tabs (Simple Parent & Admin text) -->
+            <div class="flex" style="gap: 0.5rem; flex-wrap: wrap;">
+              <button class="dash-role-tab btn btn-primary btn-sm active" data-tab="parent-dash-view">Parent
+                Dashboard</button>
+              <button class="dash-role-tab btn btn-outline btn-sm" data-tab="admin-dash-view">Admin Dashboard</button>
+              <a href="fun.html" class="btn btn-outline btn-sm"
+                style="border-color: var(--accent-amber); color: #B45309; font-weight: 700;">Kids Fun Zone ➔</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================================================================
+             1. PARENT DASHBOARD VIEW
+             ========================================================================= -->
+        <div id="parent-dash-view" class="dash-view-panel">
+
+          <!-- Parent Banner & Multi-Child Switcher -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
+              <div class="flex items-center" style="gap: 1rem;">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80"
+                  alt="Parent Avatar" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover;" />
+                <div>
+                  <h2 class="heading-sm">Parent: Sarah Miller</h2>
+                  <p style="color: var(--text-muted); font-size: 0.9rem;">Subscription Plan: <strong
+                      style="color: var(--primary);">Bright Scholar ($59/mo)</strong> | Active</p>
+                </div>
+              </div>
+
+              <!-- Child Selector -->
+              <div class="flex items-center" style="gap: 0.5rem;">
+                <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">Select Student:</span>
+                <button class="parent-child-tab-btn btn btn-primary btn-sm active" data-child-id="child-1">Maya (Grade
+                  3)</button>
+                <button class="parent-child-tab-btn btn btn-outline btn-sm" data-child-id="child-2">Leo (Grade
+                  1)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel Child 1 (Maya) -->
+          <div id="panel-child-1" class="parent-child-panel">
+
+            <!-- Key Metrics Overview Cards -->
+            <div class="grid-4" style="margin-bottom: 2rem;">
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">142 Mins
+                </div>
+                <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 600;">↑ 12% vs last week</div>
+              </div>
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">92.4%
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Passed 18 of 20 quizzes</div>
+              </div>
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Star Coins Balance</div>
+                <div class="flex items-center"
+                  style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <span class="user-stars-count">480</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Unlocked 4 Avatar items</div>
+              </div>
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
+                <div class="flex items-center"
+                  style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
+                    <path
+                      d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                  </svg>
+                  <span class="user-streak-count">7</span> Days
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Record streak achieved!</div>
+              </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 2rem;">
+              <!-- Enrolled Subjects & Progress -->
+              <div class="card">
+                <h3 class="heading-sm" style="margin-bottom: 1rem;">Maya's Subject Progress</h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  <div
+                    style="padding: 0.9rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-surface);">
+                    <div class="flex justify-between"
+                      style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem;">
+                      <span>Primary Mathematics</span>
+                      <span style="color: var(--primary);">78% Complete</span>
+                    </div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">Next: Multiplying
+                      by 8 Treasure Hunt</div>
+                    <div
+                      style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 78%; height: 100%; background: var(--primary);"></div>
+                    </div>
+                  </div>
+
+                  <div
+                    style="padding: 0.9rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-surface);">
+                    <div class="flex justify-between"
+                      style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem;">
+                      <span>Phonics & Creative Reading</span>
+                      <span style="color: var(--accent-emerald);">64% Complete</span>
+                    </div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">Next: Silent K & G
+                      Detective</div>
+                    <div
+                      style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 64%; height: 100%; background: var(--accent-emerald);"></div>
+                    </div>
+                  </div>
+
+                  <div
+                    style="padding: 0.9rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-surface);">
+                    <div class="flex justify-between"
+                      style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem;">
+                      <span>Science Explorers</span>
+                      <span style="color: var(--accent-amber);">85% Complete</span>
+                    </div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">Next: Solar System
+                      & Mars Rover</div>
+                    <div
+                      style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 85%; height: 100%; background: var(--accent-amber);"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Screen Time Limit & Tutor Notes -->
+              <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="card">
+                  <div class="flex items-center justify-between" style="margin-bottom: 0.75rem;">
+                    <h3 class="heading-sm flex items-center" style="gap: 0.5rem;">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                      <span>Daily Screen-Time Limit Control</span>
+                    </h3>
+                    <span id="screen-time-val" class="badge badge-primary">25 Mins/Day</span>
+                  </div>
+                  <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+                    Adjust maximum daily active learning time for Maya. Changes take effect instantly.
+                  </p>
+                  <input id="screen-time-slider" type="range" min="15" max="60" step="5" value="25"
+                    style="width: 100%; accent-color: var(--primary); cursor: pointer;" />
+                </div>
+
+                <div class="card">
+                  <h3 class="heading-sm flex items-center" style="gap: 0.5rem; margin-bottom: 0.75rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                      <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                    <span>Tutor Feedback Notes</span>
+                  </h3>
+                  <div
+                    style="font-size: 0.88rem; color: var(--text-main); background: var(--bg-page); padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.2rem;">Tutor Emma Sterling
+                      (Yesterday):</div>
+                    "Maya demonstrated fantastic confidence with equivalent fractions today! She quickly solved visual
+                    2/4 and 1/2 pizza problems."
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Student Detailed Learning Progress Maintenance Table -->
+            <div class="card">
+              <div class="flex items-center justify-between"
+                style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                <div>
+                  <h3 class="heading-sm">Student Progress & Quiz Activity History</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Detailed maintenance log of all lessons
+                    completed, quiz scores, and time spent.</p>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="showToast('Exporting student report PDF...', '📄')">📥
+                  Export Student Log</button>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+                  <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-page);">
+                      <th style="padding: 0.75rem;">Date</th>
+                      <th style="padding: 0.75rem;">Subject</th>
+                      <th style="padding: 0.75rem;">Lesson / Quiz Title</th>
+                      <th style="padding: 0.75rem;">Score</th>
+                      <th style="padding: 0.75rem;">Status</th>
+                      <th style="padding: 0.75rem;">Time Spent</th>
+                      <th style="padding: 0.75rem;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 600;">Aug 14, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Mathematics</span></td>
+                      <td style="padding: 0.75rem; font-weight: 700;">Pirate Treasure: Multiplying by 8</td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">95%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Passed ⭐</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">22 mins</td>
+                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
+                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 600;">Aug 13, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">English Phonics</span></td>
+                      <td style="padding: 0.75rem; font-weight: 700;">Silent K & G Consonant Detective</td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">90%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Passed ⭐</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">18 mins</td>
+                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
+                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 600;">Aug 12, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-amber">Science</span></td>
+                      <td style="padding: 0.75rem; font-weight: 700;">Solar System & Mars Rover Exploration</td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">100%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-purple">Excelled 🌟</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">25 mins</td>
+                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
+                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 600;">Aug 10, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-purple">Logic Puzzles</span></td>
+                      <td style="padding: 0.75rem; font-weight: 700;">Double-Digit Logic Sequences</td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--primary);">88%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Passed ⭐</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">15 mins</td>
+                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
+                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Panel Child 2 (Leo) -->
+          <div id="panel-child-2" class="parent-child-panel hidden">
+            <div class="grid-4" style="margin-bottom: 2rem;">
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">95 Mins
+                </div>
+              </div>
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">88.0%
+                </div>
+              </div>
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Earned Star Coins</div>
+                <div class="flex items-center"
+                  style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <span>310</span>
+                </div>
+              </div>
+              <div class="card">
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
+                <div class="flex items-center"
+                  style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
+                    <path
+                      d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                  </svg>
+                  <span>4 Days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- =========================================================================
+             2. ADMIN DASHBOARD VIEW (Management Dashboard for Administrators)
+             ========================================================================= -->
+        <div id="admin-dash-view" class="dash-view-panel hidden">
+
+          <!-- Admin KPI Overview Cards -->
+          <div class="grid-4" style="margin-bottom: 2rem;">
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Total Active Students</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">1,420</div>
+              <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 600;">↑ 45 enrolled this month
+              </div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Total Parent Accounts</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">1,150
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">98.2% account retention</div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Published Lessons</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0;">148</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Across 4 Core Subjects</div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Monthly Revenue</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: #8B5CF6; margin: 0.25rem 0;">$42,500</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">88% Annual Subscriptions</div>
+            </div>
+          </div>
+
+          <!-- Admin Action Sub-Nav -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
+              <div class="flex" style="gap: 0.5rem; flex-wrap: wrap;">
+                <button class="admin-subtab-btn btn btn-primary btn-sm active"
+                  data-subtab="admin-students-panel">👨‍👩‍👧 Student & Parent Roster</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm" data-subtab="admin-lessons-panel">📚 Lessons &
+                  Curriculum</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm" data-subtab="admin-quizzes-panel">🧩 Quiz
+                  Question Bank</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm" data-subtab="admin-subscriptions-panel">💳
+                  Subscriptions & Plans</button>
+              </div>
+
+              <div class="flex" style="gap: 0.5rem;">
+                <button class="btn btn-primary btn-sm flex items-center" style="gap: 0.35rem;"
+                  data-modal-target="modal-add-student">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                  <span>+ Add Student</span>
+                </button>
+                <button class="btn btn-outline btn-sm flex items-center" style="gap: 0.35rem;"
+                  data-modal-target="modal-send-broadcast">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                  </svg>
+                  <span>Broadcast Alert</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBTAB 1: Student & Parent Maintenance Roster -->
+          <div id="admin-students-panel" class="admin-subpanel">
+            <div class="card">
+              <div class="flex items-center justify-between"
+                style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <h3 class="heading-sm">Student & Parent Maintenance Roster</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">View, filter, edit, activate/deactivate, or
+                    add student and parent details.</p>
+                </div>
+
+                <!-- Search & Grade Filter Controls -->
+                <div class="flex items-center" style="gap: 0.75rem; flex-wrap: wrap;">
+                  <input id="admin-student-search" type="text" placeholder="Search student or email..."
+                    style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem;" />
+                  <select id="admin-grade-filter"
+                    style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem; background: var(--bg-surface); color: var(--text-main);">
+                    <option value="all">All Grade Levels</option>
+                    <option value="Grade 1">Grade 1</option>
+                    <option value="Grade 2">Grade 2</option>
+                    <option value="Grade 3">Grade 3</option>
+                    <option value="Grade 4">Grade 4</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table id="admin-student-table"
+                  style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+                  <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-page);">
+                      <th style="padding: 0.75rem;">Student Name</th>
+                      <th style="padding: 0.75rem;">Parent Email</th>
+                      <th style="padding: 0.75rem;">Grade Level</th>
+                      <th style="padding: 0.75rem;">Enrolled Subjects</th>
+                      <th style="padding: 0.75rem;">Progress</th>
+                      <th style="padding: 0.75rem;">Quiz Avg</th>
+                      <th style="padding: 0.75rem;">Account Status</th>
+                      <th style="padding: 0.75rem;">Maintenance Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 3">
+                      <td style="padding: 0.75rem; font-weight: 700;">Maya Miller</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">sarah.miller@example.com</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 3</span></td>
+                      <td style="padding: 0.75rem;">Math, Phonics, Science</td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 78%; height: 100%; background: var(--primary);"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">78%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">92.4%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm" onclick="editStudent('Maya Miller')">Edit</button>
+                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Deactivate</button>
+                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
+                            onclick="deleteStudentRow(this)">Delete</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 1">
+                      <td style="padding: 0.75rem; font-weight: 700;">Leo Miller</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">sarah.miller@example.com</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 1</span></td>
+                      <td style="padding: 0.75rem;">Math, Phonics</td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 64%; height: 100%; background: var(--accent-emerald);"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">64%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">88.0%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm" onclick="editStudent('Leo Miller')">Edit</button>
+                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Deactivate</button>
+                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
+                            onclick="deleteStudentRow(this)">Delete</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 4">
+                      <td style="padding: 0.75rem; font-weight: 700;">Sophia Davis</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">robert.davis@example.com</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-purple">Grade 4</span></td>
+                      <td style="padding: 0.75rem;">Math, Science, Logic</td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 91%; height: 100%; background: var(--accent-amber);"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">91%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">96.5%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm" onclick="editStudent('Sophia Davis')">Edit</button>
+                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Deactivate</button>
+                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
+                            onclick="deleteStudentRow(this)">Delete</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 2">
+                      <td style="padding: 0.75rem; font-weight: 700;">Ethan Walker</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">jessica.walker@example.com</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 2</span></td>
+                      <td style="padding: 0.75rem;">Math, Phonics</td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 45%; height: 100%; background: #EF4444;"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">45%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--primary);">74.0%</td>
+                      <td style="padding: 0.75rem;"><span class="badge"
+                          style="background: #FEE2E2; color: #991B1B;">Paused</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm" onclick="editStudent('Ethan Walker')">Edit</button>
+                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Activate</button>
+                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
+                            onclick="deleteStudentRow(this)">Delete</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBTAB 2: Lessons & Curriculum Manager -->
+          <div id="admin-lessons-panel" class="admin-subpanel hidden">
+            <div class="card">
+              <div class="flex items-center justify-between"
+                style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <h3 class="heading-sm">Lessons & Curriculum Management</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Add, edit, or publish interactive lesson
+                    modules and assigned grade levels.</p>
+                </div>
+                <button class="btn btn-primary btn-sm" data-modal-target="modal-add-lesson">+ Create New Lesson</button>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+                  <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-page);">
+                      <th style="padding: 0.75rem;">Subject</th>
+                      <th style="padding: 0.75rem;">Lesson Title</th>
+                      <th style="padding: 0.75rem;">Target Grade</th>
+                      <th style="padding: 0.75rem;">Quizzes Count</th>
+                      <th style="padding: 0.75rem;">Enrolled Students</th>
+                      <th style="padding: 0.75rem;">Status</th>
+                      <th style="padding: 0.75rem;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Mathematics</span></td>
+                      <td style="padding: 0.75rem; font-weight: 700;">Multiplying by 8 Treasure Hunt</td>
+                      <td style="padding: 0.75rem;">Grade 3</td>
+                      <td style="padding: 0.75rem;">5 Quizzes</td>
+                      <td style="padding: 0.75rem;">420 Students</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Published</span></td>
+                      <td style="padding: 0.75rem;">
+                        <button class="btn btn-outline btn-sm"
+                          onclick="showToast('Editing lesson module...', '📝')">Edit</button>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Phonics & Reading</span></td>
+                      <td style="padding: 0.75rem; font-weight: 700;">Silent K & G Consonant Detective</td>
+                      <td style="padding: 0.75rem;">Grade 2</td>
+                      <td style="padding: 0.75rem;">4 Quizzes</td>
+                      <td style="padding: 0.75rem;">380 Students</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Published</span></td>
+                      <td style="padding: 0.75rem;">
+                        <button class="btn btn-outline btn-sm"
+                          onclick="showToast('Editing lesson module...', '📝')">Edit</button>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem;"><span class="badge badge-amber">Science Explorers</span></td>
+                      <td style="padding: 0.75rem; font-weight: 700;">Solar System & Mars Rover Exploration</td>
+                      <td style="padding: 0.75rem;">Grade 3</td>
+                      <td style="padding: 0.75rem;">6 Quizzes</td>
+                      <td style="padding: 0.75rem;">510 Students</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Published</span></td>
+                      <td style="padding: 0.75rem;">
+                        <button class="btn btn-outline btn-sm"
+                          onclick="showToast('Editing lesson module...', '📝')">Edit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBTAB 3: Quizzes & Question Bank -->
+          <div id="admin-quizzes-panel" class="admin-subpanel hidden">
+            <div class="card">
+              <div class="flex items-center justify-between"
+                style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <h3 class="heading-sm">Quiz Question Bank & Scoring Thresholds</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Manage quiz questions, answer keys,
+                    explanations, and star coin points.</p>
+                </div>
+                <button class="btn btn-primary btn-sm" data-modal-target="modal-add-quiz">+ Add Quiz Question</button>
+              </div>
+
+              <div class="grid-2">
+                <div class="card" style="background: var(--bg-page);">
+                  <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Math Q-102</div>
+                  <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Captain Sandy Treasure Chests (4 × 6)</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Options: 18, 24
+                    (Correct), 20, 28 | Points: 10 Stars</p>
+                  <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 700;">Pass Rate: 94.2%
+                    (1,210 attempts)</div>
+                </div>
+
+                <div class="card" style="background: var(--bg-page);">
+                  <div class="badge badge-amber" style="margin-bottom: 0.5rem;">Science Q-204</div>
+                  <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Red Planet & Iron Oxide Rust (Mars)</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Options: Venus, Mars
+                    (Correct), Jupiter, Mercury | Points: 10 Stars</p>
+                  <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 700;">Pass Rate: 89.6%
+                    (1,150 attempts)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBTAB 4: Subscriptions & Billing Manager -->
+          <div id="admin-subscriptions-panel" class="admin-subpanel hidden">
+            <div class="grid-3" style="margin-bottom: 1.5rem;">
+              <div class="card text-center">
+                <h4 class="heading-sm">Starter Plan ($29/mo)</h4>
+                <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 0.5rem 0;">340 Families
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">$9,860 Monthly MRR</div>
+              </div>
+              <div class="card text-center" style="border-color: var(--primary);">
+                <span class="badge badge-primary" style="margin-bottom: 0.25rem;">Most Popular</span>
+                <h4 class="heading-sm">Bright Scholar ($59/mo)</h4>
+                <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent-emerald); margin: 0.5rem 0;">890
+                  Families</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">$52,510 Monthly MRR</div>
+              </div>
+              <div class="card text-center">
+                <h4 class="heading-sm">Super Genius ($99/mo)</h4>
+                <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent-amber); margin: 0.5rem 0;">190
+                  Families</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">$18,810 Monthly MRR</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       MODALS FOR ADMIN OPERATIONS
+       ========================================================================= -->
+
+  <!-- Modal: Add New Student -->
+  <div id="modal-add-student" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="flex items-center justify-between" style="margin-bottom: 1rem;">
+        <h3 class="heading-sm">Register New Student Account</h3>
+        <button class="modal-close-btn" data-modal-close>✕</button>
+      </div>
+      <form id="form-add-student" onsubmit="event.preventDefault(); handleAddStudentSubmit(this);">
+        <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Student Full
+          Name</label>
+        <input type="text" required placeholder="e.g. Oliver Vance"
+          style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 0.85rem;" />
+
+        <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Parent Account
+          Email</label>
+        <input type="email" required placeholder="parent@example.com"
+          style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 0.85rem;" />
+
+        <div class="grid-2" style="gap: 0.75rem; margin-bottom: 1rem;">
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Grade
+              Level</label>
+            <select
+              style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface);">
+              <option value="Grade 1">Grade 1</option>
+              <option value="Grade 2">Grade 2</option>
+              <option value="Grade 3" selected>Grade 3</option>
+              <option value="Grade 4">Grade 4</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Student
+              Passcode / PIN</label>
+            <input type="text" required placeholder="4-digit PIN e.g. 1234"
+              style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Student Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create New Lesson -->
+  <div id="modal-add-lesson" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="flex items-center justify-between" style="margin-bottom: 1rem;">
+        <h3 class="heading-sm">Publish New Curriculum Lesson</h3>
+        <button class="modal-close-btn" data-modal-close>✕</button>
+      </div>
+      <form
+        onsubmit="event.preventDefault(); showToast('New lesson module created successfully!', '📚'); this.closest('.modal-backdrop').classList.remove('active');">
+        <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Lesson
+          Title</label>
+        <input type="text" required placeholder="e.g. Master Fraction Division"
+          style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 0.85rem;" />
+
+        <div class="grid-2" style="gap: 0.75rem; margin-bottom: 1rem;">
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Subject</label>
+            <select
+              style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface);">
+              <option value="Math">Primary Mathematics</option>
+              <option value="Phonics">Phonics & Reading</option>
+              <option value="Science">Science Explorers</option>
+              <option value="Logic">Brain Puzzles</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Target
+              Grade</label>
+            <select
+              style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface);">
+              <option value="Grade 1">Grade 1</option>
+              <option value="Grade 2">Grade 2</option>
+              <option value="Grade 3">Grade 3</option>
+              <option value="Grade 4">Grade 4</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Publish Lesson</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Broadcast Alert -->
+  <div id="modal-send-broadcast" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="flex items-center justify-between" style="margin-bottom: 1rem;">
+        <h3 class="heading-sm">Broadcast System Announcement</h3>
+        <button class="modal-close-btn" data-modal-close>✕</button>
+      </div>
+      <form
+        onsubmit="event.preventDefault(); showToast('Broadcast alert sent to all parents and students! 📢', '📣'); this.closest('.modal-backdrop').classList.remove('active');">
+        <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Announcement
+          Title</label>
+        <input type="text" required placeholder="e.g. Weekly Math Challenge Begins Today!"
+          style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 0.85rem;" />
+
+        <label style="display: block; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.88rem;">Message
+          Details</label>
+        <textarea required rows="3" placeholder="Enter broadcast text for parents and kids..."
+          style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1rem;"></textarea>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Broadcast Now</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

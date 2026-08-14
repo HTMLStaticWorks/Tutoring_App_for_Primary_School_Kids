@@ -1,0 +1,40 @@
+/* ==========================================================================
+   BrightSparks Tutoring - Right-to-Left (RTL) Layout Overrides
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: -320px;
+}
+
+[dir="rtl"] .mobile-drawer.open {
+  left: 0;
+}
+
+[dir="rtl"] .toast-container {
+  right: auto;
+  left: 1.5rem;
+}
+
+[dir="rtl"] .toast {
+  animation-name: toastSlideInRtl;
+}
+
+@keyframes toastSlideInRtl {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+[dir="rtl"] .quiz-option-btn {
+  text-align: right;
+}

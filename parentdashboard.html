@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Portal & Analytics | BrightSparks</title>
+  <meta name="description"
+    content="Comprehensive parent monitoring portal with child progress tracking, score breakdown, tutor notes, and screen-time limit controls." />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+</head>
+
+<body>
+
+  <!-- Dashboard Header (No main nav menu, with Theme, RTL, and Logout redirecting to Home) -->
+  <header class="site-header">
+    <div class="container flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
+        <span>BrightSparks</span>
+      </a>
+
+      <div class="flex items-center" style="gap: 0.65rem;">
+        <button class="theme-toggle-btn btn btn-outline btn-sm" title="Toggle Dark Mode"></button>
+        <button class="btn btn-outline btn-sm" title="Toggle RTL">RTL</button>
+        <a href="index.html" class="btn btn-outline btn-sm flex items-center" style="gap: 0.35rem;"
+          onclick="showToast('Logged out successfully! Redirecting to Home...', '👋');">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+          <span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 80px;">
+    <section class="section-padding">
+      <div class="container">
+        <!-- Parent Header -->
+        <div class="card" style="margin-bottom: 2rem; border-color: var(--primary-light);">
+          <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
+            <div class="flex items-center" style="gap: 1rem;">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80"
+                alt="Parent Avatar" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" />
+              <div>
+                <h1 class="heading-md">Sarah Miller's Parent Portal</h1>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Subscription Plan: <strong
+                    style="color: var(--primary);">Bright Scholar ($59/mo)</strong> | Active</p>
+              </div>
+            </div>
+
+            <!-- Multi-Child Tab Switcher -->
+            <div class="flex" style="gap: 0.5rem;">
+              <button class="parent-child-tab-btn btn btn-primary btn-sm active" data-child-id="child-1">Maya (Grade
+                3)</button>
+              <button class="parent-child-tab-btn btn btn-outline btn-sm" data-child-id="child-2">Leo (Grade 1)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel Child 1 (Maya) -->
+        <div id="panel-child-1" class="parent-child-panel">
+          <div class="grid-4" style="margin-bottom: 2rem;">
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">142 Mins</div>
+              <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 600;">↑ 12% from last week</div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">92.4%
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Passed 18 of 20 quizzes</div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Earned Star Coins</div>
+              <div class="flex items-center"
+                style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                <span>480</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Unlocked 4 Avatar items</div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
+              <div class="flex items-center"
+                style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
+                  <path
+                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                </svg>
+                <span>7 Days</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Record streak achieved!</div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <!-- Screen Time Control Card -->
+            <div class="card">
+              <div class="flex items-center justify-between" style="margin-bottom: 1rem;">
+                <h3 class="heading-sm flex items-center" style="gap: 0.5rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <span>Daily Screen-Time Limit Control</span>
+                </h3>
+                <span id="screen-time-val" class="badge badge-primary">25 Mins/Day</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+                Set maximum active learning minutes. Once reached, the student dashboard locks with a gentle rest
+                screen.
+              </p>
+              <input id="screen-time-slider" type="range" min="15" max="60" step="5" value="25"
+                style="width: 100%; accent-color: var(--primary); cursor: pointer;" />
+            </div>
+
+            <!-- Tutor Notes Log -->
+            <div class="card">
+              <h3 class="heading-sm flex items-center" style="gap: 0.5rem; margin-bottom: 1rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+                <span>Tutor Feedback Log</span>
+              </h3>
+              <div
+                style="font-size: 0.9rem; color: var(--text-main); background: var(--bg-page); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">Tutor Emma Sterling
+                  (Yesterday):</div>
+                "Maya demonstrated fantastic confidence with equivalent fractions today! She quickly solved visual 2/4
+                and 1/2 pizza problems. Recommended next step: times-table by 8."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel Child 2 (Leo) -->
+        <div id="panel-child-2" class="parent-child-panel hidden">
+          <div class="grid-4" style="margin-bottom: 2rem;">
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">95 Mins</div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">88.0%
+              </div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Earned Star Coins</div>
+              <div class="flex items-center"
+                style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                <span>310</span>
+              </div>
+            </div>
+            <div class="card">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
+              <div class="flex items-center"
+                style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
+                  <path
+                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                </svg>
+                <span>4 Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

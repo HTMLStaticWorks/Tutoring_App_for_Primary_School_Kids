@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Sign In & Registration | BrightSparks</title>
+  <meta name="description"
+    content="Parent login portal and child account registration for BrightSparks Primary Tutoring." />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+</head>
+
+<body
+  style="min-height: 100vh; display: flex; flex-direction: column; background: linear-gradient(135deg, #FAF9F5, #F3E8FF);">
+
+  <!-- Minimal Header -->
+  <header class="site-header">
+    <div class="container flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
+        <span>BrightSparks</span>
+      </a>
+
+      <div class="flex items-center" style="gap: 0.65rem;">
+        <button class="theme-toggle-btn btn btn-outline btn-sm" title="Toggle Dark Mode"></button>
+        <button class="btn btn-outline btn-sm" title="Toggle RTL">RTL</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 100px; flex: 1;">
+    <div class="container" style="max-width: 480px; margin-top: 1rem; margin-bottom: 3rem;">
+
+
+      <!-- Login View Panel -->
+      <div id="login-view-panel" class="card" style="box-shadow: var(--shadow-xl);">
+        <h2 class="heading-sm" style="margin-bottom: 1rem; text-align: center;">Sign In</h2>
+        <form onsubmit="event.preventDefault(); showToast('Logged in successfully! Redirecting...'); setTimeout(() => window.location.href='parentdashboard.html', 1000);">
+          <label style="display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.88rem;">Parent Email or Student ID</label>
+          <input type="text" required placeholder="sarah.miller@example.com"
+            style="width: 100%; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1rem;" />
+
+          <label style="display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.88rem;">Password / Kid PIN</label>
+          <div style="position: relative; margin-bottom: 1rem;">
+            <input type="password" required placeholder="••••••••"
+              style="width: 100%; padding: 0.75rem 2.5rem 0.75rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);" />
+            <button type="button" class="pwd-toggle-btn" title="Toggle password visibility"
+              style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+
+          <!-- Remember Me & Forgot Password (Same Line) -->
+          <div class="flex items-center justify-between" style="margin-bottom: 1.25rem; font-size: 0.88rem;">
+            <label class="flex items-center" style="gap: 0.4rem; cursor: pointer; font-weight: 600; color: var(--text-main);">
+              <input type="checkbox" style="accent-color: var(--primary); cursor: pointer;" />
+              <span>Remember me</span>
+            </label>
+            <a href="javascript:void(0)" onclick="showToast('Password reset link sent to your email!', '🔒')" style="color: var(--primary); font-weight: 700;">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary flex justify-center items-center"
+            style="width: 100%; margin-bottom: 1rem; gap: 0.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10 17 15 12 10 7" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+            </svg>
+            <span>Sign In</span>
+          </button>
+        </form>
+
+        <!-- Social Logins (Google & Apple) -->
+        <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; text-align: center; margin-bottom: 1rem;">
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem; font-weight: 600;">Or sign in with</div>
+          <div class="grid-2" style="gap: 0.75rem;">
+            <button type="button" class="btn btn-outline btn-sm flex items-center justify-center" style="gap: 0.4rem;" onclick="showToast('Signing in with Google...', '🌐'); setTimeout(() => window.location.href='parentdashboard.html', 800);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+              <span>Google</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-sm flex items-center justify-center" style="gap: 0.4rem;" onclick="showToast('Signing in with Apple...', '🍎'); setTimeout(() => window.location.href='parentdashboard.html', 800);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.98 1.07.08 2.15-.58 2.81-1.38z"/></svg>
+              <span>Apple</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center"
+          style="font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 1rem;">
+          Need a new account? <a href="javascript:void(0)" id="switch-to-signup-link"
+            style="color: var(--primary); font-weight: 700;">Register Kid ➔</a>
+        </div>
+      </div>
+
+      <!-- Signup View Panel (Hidden by default) -->
+      <div id="signup-view-panel" class="card hidden" style="box-shadow: var(--shadow-xl);">
+        <h2 class="heading-sm" style="margin-bottom: 1rem; text-align: center;">Register Kid</h2>
+        <form onsubmit="handleSignupFormSubmit(event)">
+          <label style="display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.88rem;">Parent Full Name</label>
+          <input type="text" required placeholder="e.g. Sarah Miller"
+            style="width: 100%; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1rem;" />
+
+          <label style="display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.88rem;">Parent Email</label>
+          <input type="email" required placeholder="sarah.miller@example.com"
+            style="width: 100%; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1rem;" />
+
+          <label style="display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.88rem;">Child's First Name & Grade</label>
+          <div class="flex" style="gap: 0.5rem; margin-bottom: 1rem;">
+            <input type="text" required placeholder="Child Name (e.g. Leo)"
+              style="flex: 1; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);" />
+            <select
+              style="width: 130px; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface);">
+              <option>Grade 1</option>
+              <option>Grade 2</option>
+              <option selected>Grade 3</option>
+              <option>Grade 4</option>
+              <option>Grade 5</option>
+            </select>
+          </div>
+
+          <label style="display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.88rem;">Create Password</label>
+          <div style="position: relative; margin-bottom: 1rem;">
+            <input id="signup-password" type="password" required placeholder="At least 8 characters"
+              style="width: 100%; padding: 0.75rem 2.5rem 0.75rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);" />
+            <button type="button" class="pwd-toggle-btn" title="Toggle password visibility"
+              style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+
+          <label style="display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.88rem;">Confirm Password</label>
+          <div style="position: relative; margin-bottom: 1rem;">
+            <input id="signup-confirm-password" type="password" required placeholder="Repeat password"
+              style="width: 100%; padding: 0.75rem 2.5rem 0.75rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);" />
+            <button type="button" class="pwd-toggle-btn" title="Toggle password visibility"
+              style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+
+          <!-- Terms & Conditions Checkbox -->
+          <div style="margin-bottom: 1.25rem;">
+            <label class="flex items-start" style="gap: 0.5rem; cursor: pointer; font-size: 0.85rem; color: var(--text-muted);">
+              <input type="checkbox" required style="margin-top: 0.15rem; accent-color: var(--primary); cursor: pointer;" />
+              <span>I agree to the <a href="support.html" style="color: var(--primary); font-weight: 700;">Terms & Conditions</a> and <a href="support.html" style="color: var(--primary); font-weight: 700;">Privacy Policy</a>.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary flex justify-center items-center"
+            style="width: 100%; margin-bottom: 1rem; gap: 0.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="8.5" cy="7" r="4" />
+              <line x1="20" y1="8" x2="20" y2="14" />
+              <line x1="17" y1="11" x2="23" y2="11" />
+            </svg>
+            <span>Create Account & Start Trial</span>
+          </button>
+        </form>
+
+        <!-- Social Logins (Google & Apple) -->
+        <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; text-align: center; margin-bottom: 1rem;">
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem; font-weight: 600;">Or register with</div>
+          <div class="grid-2" style="gap: 0.75rem;">
+            <button type="button" class="btn btn-outline btn-sm flex items-center justify-center" style="gap: 0.4rem;" onclick="showToast('Signing up with Google...', '🌐'); setTimeout(() => window.location.href='parentdashboard.html', 800);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+              <span>Google</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-sm flex items-center justify-center" style="gap: 0.4rem;" onclick="showToast('Signing up with Apple...', '🍎'); setTimeout(() => window.location.href='parentdashboard.html', 800);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.98 1.07.08 2.15-.58 2.81-1.38z"/></svg>
+              <span>Apple</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center"
+          style="font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 1rem;">
+          Already have an account? <a href="javascript:void(0)" id="switch-to-login-link"
+            style="color: var(--primary); font-weight: 700;">◄ Back to Sign In</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function handleSignupFormSubmit(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('signup-password')?.value;
+      const confirmPwd = document.getElementById('signup-confirm-password')?.value;
+
+      if (pwd !== confirmPwd) {
+        if (typeof showToast === 'function') {
+          showToast('Passwords do not match! Please check and try again.', '⚠️');
+        }
+        return;
+      }
+
+      if (typeof showToast === 'function') {
+        showToast('Account Created! Welcome to BrightSparks!', '🌟');
+      }
+      setTimeout(() => window.location.href = 'parentdashboard.html', 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginPanel = document.getElementById('login-view-panel');
+      const signupPanel = document.getElementById('signup-view-panel');
+      const toSignupLink = document.getElementById('switch-to-signup-link');
+      const toLoginLink = document.getElementById('switch-to-login-link');
+      const subtitle = document.getElementById('auth-subtitle');
+
+      // Password visibility toggle logic
+      document.querySelectorAll('.pwd-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const input = btn.previousElementSibling;
+          if (input && input.tagName === 'INPUT') {
+            if (input.type === 'password') {
+              input.type = 'text';
+              btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+            } else {
+              input.type = 'password';
+              btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+            }
+          }
+        });
+      });
+
+      function showSignupView() {
+        if (loginPanel && signupPanel) {
+          loginPanel.classList.add('hidden');
+          signupPanel.classList.remove('hidden');
+          if (subtitle) subtitle.textContent = 'Create a parent account and setup your child profile';
+          sessionStorage.setItem('brightsparks_auth_view', 'signup');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#signup');
+          } else {
+            window.location.hash = 'signup';
+          }
+        }
+      }
+
+      function showLoginView() {
+        if (loginPanel && signupPanel) {
+          signupPanel.classList.add('hidden');
+          loginPanel.classList.remove('hidden');
+          if (subtitle) subtitle.textContent = 'Sign in to access Parent Portal & Student Dashboard';
+          sessionStorage.setItem('brightsparks_auth_view', 'login');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#login');
+          } else {
+            window.location.hash = 'login';
+          }
+        }
+      }
+
+      if (toSignupLink) {
+        toSignupLink.addEventListener('click', showSignupView);
+      }
+
+      if (toLoginLink) {
+        toLoginLink.addEventListener('click', showLoginView);
+      }
+
+      // Restore active view state on page reload
+      const savedView = sessionStorage.getItem('brightsparks_auth_view');
+      const currentHash = window.location.hash;
+
+      if (currentHash === '#signup' || savedView === 'signup') {
+        showSignupView();
+      } else if (currentHash === '#login' || savedView === 'login') {
+        showLoginView();
+      }
+    });
+  </script>
+</body>
+
+</html>

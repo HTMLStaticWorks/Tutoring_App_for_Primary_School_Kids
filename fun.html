@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids Play & Learn Fun Zone | BrightSparks</title>
+  <meta name="description"
+    content="Playful learning hub for kids! Solve interactive math pirate challenges, phonics word puzzles, science space trivia, earn star coins, and unlock fun avatars." />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+</head>
+
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
+        <span>BrightSparks</span>
+      </a>
+
+      <nav class="nav-menu">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">Home ▾</a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">Home 1 (Playful)</a>
+            <a href="home-2.html" class="dropdown-item">Home 2 (Academic)</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">Programs</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="fun.html" class="nav-link active">Fun Zone</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="pricing-booking.html" class="nav-link">Pricing</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="support.html" class="nav-link">Support</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">Dashboard ▾</a>
+          <div class="dropdown-menu">
+            <a href="parentdashboard.html" class="dropdown-item">Parent</a>
+            <a href="dashboard.html" class="dropdown-item">Admin</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex items-center" style="gap: 0.65rem;">
+        <button class="theme-toggle-btn btn btn-outline btn-sm" title="Toggle Dark Mode"></button>
+        <button class="btn btn-outline btn-sm" title="Toggle RTL">RTL</button>
+        <a href="auth.html" class="btn btn-primary btn-sm">Log In</a>
+        <button id="mobile-menu-open" class="mobile-menu-btn" title="Open Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="flex items-center justify-between" style="margin-bottom: 1.5rem;">
+      <span class="heading-sm">Menu Navigation</span>
+      <button id="mobile-menu-close" style="font-size: 1.5rem;">✕</button>
+    </div>
+    <ul class="flex flex-col" style="gap: 1rem;">
+      <li><a href="index.html" class="nav-link">Home 1 (Playful)</a></li>
+      <li><a href="home-2.html" class="nav-link">Home 2 (Academic)</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Programs</a></li>
+      <li><a href="fun.html" class="nav-link active">Fun Zone</a></li>
+      <li><a href="pricing-booking.html" class="nav-link">Pricing</a></li>
+      <li><a href="support.html" class="nav-link">Support</a></li>
+      <li><a href="dashboard.html" class="nav-link">Main Dashboard</a></li>
+      <li><a href="parentdashboard.html" class="nav-link">Parent Portal</a></li>
+      <li><a href="auth.html" class="nav-link">Sign In / Register</a></li>
+    </ul>
+  </div>
+
+  <main style="padding-top: 80px;">
+    <section class="section-padding" style="background: var(--bg-page);">
+      <div class="container">
+
+        <!-- Kids Header Bar -->
+        <div class="card"
+          style="margin-bottom: 2rem; border-color: var(--primary-light); background: linear-gradient(135deg, #FFFBEB, #F3E8FF);">
+          <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
+            <div class="flex items-center" style="gap: 1rem;">
+              <div
+                style="background: #FEF3C7; width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;">
+                🚀
+              </div>
+              <div>
+                <div class="badge badge-amber" style="margin-bottom: 0.25rem;">Level 4 Genius Explorer</div>
+                <h1 class="heading-md">Kids Play & Learn Fun Zone! 🎮</h1>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Choose a fun subject game, solve interactive
+                  quizzes, and unlock star rewards!</p>
+              </div>
+            </div>
+
+            <!-- Kids Rewards Bar -->
+            <div class="flex items-center" style="gap: 1rem; flex-wrap: wrap;">
+              <div class="text-center"
+                style="background: var(--bg-surface); padding: 0.65rem 1.15rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                <div class="flex items-center justify-center"
+                  style="font-size: 1.4rem; font-weight: 800; color: var(--accent-amber); gap: 0.35rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <span class="user-stars-count">480</span>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Star Coins</div>
+              </div>
+
+              <div class="text-center"
+                style="background: var(--bg-surface); padding: 0.65rem 1.15rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                <div class="flex items-center justify-center"
+                  style="font-size: 1.4rem; font-weight: 800; color: #EF4444; gap: 0.35rem;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
+                    <path
+                      d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                  </svg>
+                  <span class="user-streak-count">7</span> Days
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Daily Streak</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subject Games Selection Grid -->
+        <h2 class="heading-sm" style="margin-bottom: 1rem;">Choose Your Adventure Game</h2>
+        <div class="grid-4" style="margin-bottom: 2rem;">
+          <div class="card text-center"
+            style="cursor: pointer; border: 2px solid var(--primary-light); background: linear-gradient(180deg, var(--bg-surface), #F3E8FF);"
+            onclick="selectFunSubject(0)">
+            <div style="font-size: 2.8rem; margin-bottom: 0.5rem;">🏴‍☠️</div>
+            <h3 style="font-weight: 800; margin-bottom: 0.25rem;">Math Pirate Hunt</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">Multiply & unlock treasure
+              chests!</p>
+            <span class="badge badge-primary">Play Math Game ➔</span>
+          </div>
+
+          <div class="card text-center"
+            style="cursor: pointer; border: 2px solid var(--accent-emerald-light); background: linear-gradient(180deg, var(--bg-surface), #ECFDF5);"
+            onclick="selectFunSubject(2)">
+            <div style="font-size: 2.8rem; margin-bottom: 0.5rem;">🔍</div>
+            <h3 style="font-weight: 800; margin-bottom: 0.25rem;">Phonics Detective</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">Crack silent letters & word
+              codes!</p>
+            <span class="badge badge-emerald">Play Phonics ➔</span>
+          </div>
+
+          <div class="card text-center"
+            style="cursor: pointer; border: 2px solid #FDE68A; background: linear-gradient(180deg, var(--bg-surface), #FEF3C7);"
+            onclick="selectFunSubject(1)">
+            <div style="font-size: 2.8rem; margin-bottom: 0.5rem;">🚀</div>
+            <h3 style="font-weight: 800; margin-bottom: 0.25rem;">Space Explorer</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">Blast off to Mars & planet
+              trivia!</p>
+            <span class="badge badge-amber">Play Science ➔</span>
+          </div>
+
+          <div class="card text-center"
+            style="cursor: pointer; border: 2px solid #DDD6FE; background: linear-gradient(180deg, var(--bg-surface), #F5F3FF);"
+            onclick="selectFunSubject(3)">
+            <div style="font-size: 2.8rem; margin-bottom: 0.5rem;">🧠</div>
+            <h3 style="font-weight: 800; margin-bottom: 0.25rem;">Brain Logic Puzzles</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">Solve sequence patterns &
+              riddles!</p>
+            <span class="badge badge-purple">Play Logic ➔</span>
+          </div>
+        </div>
+
+        <!-- Live Interactive Quiz Engine & Game Player -->
+        <div class="grid-2" style="margin-bottom: 2.5rem;">
+          <div>
+            <div class="quiz-box">
+              <div class="flex justify-between items-center" style="margin-bottom: 1rem;">
+                <span id="quiz-subject-label" class="badge badge-primary">Primary Mathematics</span>
+                <span id="quiz-progress-text"
+                  style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">Question 1 of 4</span>
+              </div>
+
+              <h2 id="quiz-question-text" class="heading-sm" style="margin-bottom: 1.25rem;">
+                Captain Sandy has 4 treasure chests. Each chest holds 6 gold coins. How many gold coins does Captain
+                Sandy have in total?
+              </h2>
+
+              <div id="quiz-options-container">
+                <!-- Options populated dynamically by dashboard.js -->
+              </div>
+
+              <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+                <button id="quiz-hint-btn" class="btn btn-outline btn-sm flex items-center" style="gap: 0.35rem;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18h6" />
+                    <path d="M10 22h4" />
+                    <path
+                      d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.64 2.94 1.6 3.9.76.76 1.23 1.52 1.4 2.5" />
+                  </svg>
+                  <span>View Hint</span>
+                </button>
+                <div class="flex" style="gap: 0.5rem;">
+                  <button id="quiz-prev-btn" class="btn btn-outline btn-sm">◄ Prev</button>
+                  <button id="quiz-next-btn" class="btn btn-primary btn-sm">Next ►</button>
+                </div>
+              </div>
+
+              <div id="quiz-hint-text" class="card hidden"
+                style="margin-top: 1rem; background: var(--accent-amber-light); color: #B45309; font-size: 0.9rem; font-weight: 600;">
+                Think of 4 groups of 6 (6 + 6 + 6 + 6).
+              </div>
+
+              <div id="quiz-explanation-box" class="card hidden"
+                style="margin-top: 1rem; background: var(--accent-emerald-light); color: #065F46;">
+                <div style="font-weight: 700; margin-bottom: 0.25rem;">Explanation:</div>
+                <p id="quiz-explanation-text" style="font-size: 0.9rem;">4 chests × 6 coins each = 24 gold coins!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Star Reward Avatar Shop & Trophy Cabinet -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <!-- Avatar Shop -->
+            <div class="card">
+              <div class="flex items-center justify-between" style="margin-bottom: 1rem;">
+                <h3 class="heading-sm flex items-center" style="gap: 0.5rem;">
+                  <span>🛍️ Star Avatar Reward Shop</span>
+                </h3>
+                <span class="badge badge-amber"><span class="user-stars-count">480</span> Stars</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Use earned Star Coins from
+                quizzes to unlock fun student avatars!</p>
+
+              <div class="grid-2" style="gap: 0.75rem;">
+                <div class="card text-center" style="padding: 0.75rem; background: var(--bg-page);">
+                  <div style="font-size: 2.2rem;">🐱🏴‍☠️</div>
+                  <div style="font-size: 0.88rem; font-weight: 700;">Pirate Cat</div>
+                  <button class="btn btn-primary btn-sm" style="margin-top: 0.5rem; width: 100%;"
+                    onclick="unlockAvatar('Pirate Cat', 0)">Equipped</button>
+                </div>
+
+                <div class="card text-center" style="padding: 0.75rem; background: var(--bg-page);">
+                  <div style="font-size: 2.2rem;">🐰🚀</div>
+                  <div style="font-size: 0.88rem; font-weight: 700;">Astronaut Bunny</div>
+                  <button class="btn btn-outline btn-sm"
+                    style="margin-top: 0.5rem; width: 100%; color: var(--accent-amber); border-color: var(--accent-amber);"
+                    onclick="unlockAvatar('Astronaut Bunny', 150)">150 Stars</button>
+                </div>
+
+                <div class="card text-center" style="padding: 0.75rem; background: var(--bg-page);">
+                  <div style="font-size: 2.2rem;">🤖🧙‍♂️</div>
+                  <div style="font-size: 0.88rem; font-weight: 700;">Robot Wizard</div>
+                  <button class="btn btn-outline btn-sm"
+                    style="margin-top: 0.5rem; width: 100%; color: var(--accent-amber); border-color: var(--accent-amber);"
+                    onclick="unlockAvatar('Robot Wizard', 200)">200 Stars</button>
+                </div>
+
+                <div class="card text-center" style="padding: 0.75rem; background: var(--bg-page);">
+                  <div style="font-size: 2.2rem;">🐲🎓</div>
+                  <div style="font-size: 0.88rem; font-weight: 700;">Dragon Scholar</div>
+                  <button class="btn btn-outline btn-sm"
+                    style="margin-top: 0.5rem; width: 100%; color: var(--accent-amber); border-color: var(--accent-amber);"
+                    onclick="unlockAvatar('Dragon Scholar', 300)">300 Stars</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Badges Cabinet -->
+            <div class="card">
+              <h3 class="heading-sm" style="margin-bottom: 0.85rem;">Earned Star Badges & Trophies</h3>
+              <div class="flex" style="gap: 0.65rem; flex-wrap: wrap;">
+                <span class="badge badge-amber flex items-center" style="gap: 0.25rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B">
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <span>Master Multiplier</span>
+                </span>
+                <span class="badge badge-emerald">Bookworm Champion</span>
+                <span class="badge badge-purple">Galactic Explorer</span>
+                <span class="badge badge-primary">Speed Runner ⚡</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="color: #fff;">
+            <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
+            <span>BrightSparks</span>
+          </a>
+          <p class="footer-tagline">Making learning bright, one spark at a time.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Learning & Fun</h4>
+          <ul class="footer-links">
+            <li><a href="fun.html">Kids Fun Zone</a></li>
+            <li><a href="services.html">Subject Programs</a></li>
+            <li><a href="dashboard.html">Quizzes & Lessons</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Parents & Admin</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Main Dashboard</a></li>
+            <li><a href="parentdashboard.html">Parent Portal</a></li>
+            <li><a href="pricing-booking.html">Subscriptions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="support.html">Help Center</a></li>
+            <li><a href="auth.html">Parent Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrightSparks Primary Learning. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
