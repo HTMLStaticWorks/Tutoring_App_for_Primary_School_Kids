@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/dark-mode.css" />
   <link rel="stylesheet" href="assets/css/rtl.css" />
+  <link rel="icon" type="image/png" href="assets/logo1.png">
 </head>
 
 <body>
@@ -294,17 +295,17 @@
                   Export Student Log</button>
               </div>
 
-              <div style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+              <div class="table-responsive-wrapper">
+                <table class="data-table">
                   <thead>
-                    <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-page);">
-                      <th style="padding: 0.75rem;">Date</th>
-                      <th style="padding: 0.75rem;">Subject</th>
-                      <th style="padding: 0.75rem;">Lesson / Quiz Title</th>
-                      <th style="padding: 0.75rem;">Score</th>
-                      <th style="padding: 0.75rem;">Status</th>
-                      <th style="padding: 0.75rem;">Time Spent</th>
-                      <th style="padding: 0.75rem;">Action</th>
+                    <tr>
+                      <th style="min-width: 110px;">Date</th>
+                      <th style="min-width: 130px;">Subject</th>
+                      <th style="min-width: 220px;">Lesson / Quiz Title</th>
+                      <th style="min-width: 80px;">Score</th>
+                      <th style="min-width: 110px;">Status</th>
+                      <th style="min-width: 100px;">Time Spent</th>
+                      <th style="min-width: 90px;">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -430,14 +431,36 @@
           <div class="card" style="margin-bottom: 2rem;">
             <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
               <div class="flex" style="gap: 0.5rem; flex-wrap: wrap;">
-                <button class="admin-subtab-btn btn btn-primary btn-sm active"
-                  data-subtab="admin-students-panel">👨‍👩‍👧 Student & Parent Roster</button>
-                <button class="admin-subtab-btn btn btn-outline btn-sm" data-subtab="admin-lessons-panel">📚 Lessons &
-                  Curriculum</button>
-                <button class="admin-subtab-btn btn btn-outline btn-sm" data-subtab="admin-quizzes-panel">🧩 Quiz
-                  Question Bank</button>
-                <button class="admin-subtab-btn btn btn-outline btn-sm" data-subtab="admin-subscriptions-panel">💳
-                  Subscriptions & Plans</button>
+                <button class="admin-subtab-btn btn btn-primary btn-sm active flex items-center" style="gap: 0.4rem;"
+                  data-subtab="admin-students-panel">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <span>Student & Parent Roster</span>
+                </button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm flex items-center" style="gap: 0.4rem;" data-subtab="admin-lessons-panel">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                  <span>Lessons & Curriculum</span>
+                </button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm flex items-center" style="gap: 0.4rem;" data-subtab="admin-quizzes-panel">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span>Quiz Question Bank</span>
+                </button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm flex items-center" style="gap: 0.4rem;" data-subtab="admin-subscriptions-panel">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                  </svg>
+                  <span>Subscriptions & Plans</span>
+                </button>
               </div>
 
               <div class="flex" style="gap: 0.5rem;">
@@ -487,19 +510,18 @@
                 </div>
               </div>
 
-              <div style="overflow-x: auto;">
-                <table id="admin-student-table"
-                  style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+              <div class="table-responsive-wrapper">
+                <table id="admin-student-table" class="data-table data-table-wide">
                   <thead>
-                    <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-page);">
-                      <th style="padding: 0.75rem;">Student Name</th>
-                      <th style="padding: 0.75rem;">Parent Email</th>
-                      <th style="padding: 0.75rem;">Grade Level</th>
-                      <th style="padding: 0.75rem;">Enrolled Subjects</th>
-                      <th style="padding: 0.75rem;">Progress</th>
-                      <th style="padding: 0.75rem;">Quiz Avg</th>
-                      <th style="padding: 0.75rem;">Account Status</th>
-                      <th style="padding: 0.75rem;">Maintenance Actions</th>
+                    <tr>
+                      <th style="min-width: 140px;">Student Name</th>
+                      <th style="min-width: 180px;">Parent Email</th>
+                      <th style="min-width: 110px;">Grade Level</th>
+                      <th style="min-width: 160px;">Enrolled Subjects</th>
+                      <th style="min-width: 120px;">Progress</th>
+                      <th style="min-width: 90px;">Quiz Avg</th>
+                      <th style="min-width: 110px;">Account Status</th>
+                      <th style="min-width: 160px;">Maintenance Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -619,17 +641,17 @@
                 <button class="btn btn-primary btn-sm" data-modal-target="modal-add-lesson">+ Create New Lesson</button>
               </div>
 
-              <div style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+              <div class="table-responsive-wrapper">
+                <table class="data-table">
                   <thead>
-                    <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-page);">
-                      <th style="padding: 0.75rem;">Subject</th>
-                      <th style="padding: 0.75rem;">Lesson Title</th>
-                      <th style="padding: 0.75rem;">Target Grade</th>
-                      <th style="padding: 0.75rem;">Quizzes Count</th>
-                      <th style="padding: 0.75rem;">Enrolled Students</th>
-                      <th style="padding: 0.75rem;">Status</th>
-                      <th style="padding: 0.75rem;">Actions</th>
+                    <tr>
+                      <th style="min-width: 140px;">Subject</th>
+                      <th style="min-width: 220px;">Lesson Title</th>
+                      <th style="min-width: 110px;">Target Grade</th>
+                      <th style="min-width: 110px;">Quizzes Count</th>
+                      <th style="min-width: 130px;">Enrolled Students</th>
+                      <th style="min-width: 110px;">Status</th>
+                      <th style="min-width: 90px;">Actions</th>
                     </tr>
                   </thead>
                   <tbody>

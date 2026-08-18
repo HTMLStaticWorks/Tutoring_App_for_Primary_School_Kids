@@ -43,6 +43,10 @@ html.dark .cta-section {
   border-color: #334155;
 }
 
+html.dark .home2-hero {
+  background: linear-gradient(180deg, #0F172A 0%, #1E1338 100%);
+}
+
 html.dark .quiz-option-btn {
   background-color: #1E293B;
   border-color: #334155;
@@ -130,23 +134,180 @@ html.dark .worksheet-card,
 html.dark .review-card,
 html.dark .privacy-badge-card,
 html.dark .stat-card-pill,
-html.dark .comparison-table-wrapper {
+html.dark .comparison-table-wrapper,
+html.dark .table-responsive-wrapper {
   background-color: #1E293B;
   border-color: #334155;
   color: #F8FAFC;
 }
 
-html.dark .comparison-table th {
+html.dark .comparison-table th,
+html.dark .data-table th {
   background-color: #0F172A;
   color: #F8FAFC;
+  border-color: #334155;
 }
 
-html.dark .comparison-table td {
+html.dark .comparison-table td,
+html.dark .data-table td {
   border-color: #334155;
-  color: #94A3B8;
+  color: #CBD5E1;
+}
+
+html.dark .data-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 html.dark .status-pill-active {
   background-color: rgba(16, 185, 129, 0.2);
   color: #34D399;
+}
+
+/* --- Theme Toggle Button Text Visibility --- */
+html.dark .theme-toggle-btn,
+html.dark .theme-toggle-btn span {
+  color: #F8FAFC !important;
+}
+
+html.dark .theme-toggle-btn:hover,
+html.dark .theme-toggle-btn:hover span {
+  color: #A78BFA !important;
+  border-color: #A78BFA;
+  background-color: rgba(99, 64, 181, 0.25);
+}
+
+html.dark .rtl-toggle-btn,
+html.dark .rtl-toggle-btn span {
+  color: #F8FAFC !important;
+}
+
+html.dark .rtl-toggle-btn:hover,
+html.dark .rtl-toggle-btn:hover span {
+  color: #A78BFA !important;
+  border-color: #A78BFA;
+  background-color: rgba(99, 64, 181, 0.25);
+}
+
+/* --- Nav Link Active & Hover Visibility in Dark Mode --- */
+html.dark .nav-link {
+  color: #CBD5E1;
+}
+
+html.dark .nav-link:hover {
+  color: #A78BFA !important;
+  background-color: rgba(99, 64, 181, 0.25) !important;
+}
+
+html.dark .nav-link.active {
+  color: #A78BFA !important;
+  background-color: rgba(99, 64, 181, 0.3) !important;
+}
+
+/* --- Badge Colors Visible in Dark Theme --- */
+html.dark .badge-primary {
+  background: rgba(99, 64, 181, 0.3);
+  color: #C4B5FD !important;
+}
+
+html.dark .badge-amber {
+  background: rgba(245, 158, 11, 0.25);
+  color: #FBBF24 !important;
+}
+
+html.dark .badge-emerald {
+  background: rgba(16, 185, 129, 0.25);
+  color: #34D399 !important;
+}
+
+html.dark .badge-purple {
+  background: rgba(139, 92, 246, 0.25);
+  color: #C4B5FD !important;
+}
+
+/* --- Outline Button Visibility in Dark Mode --- */
+html.dark .btn-outline {
+  border-color: #475569;
+  color: #F8FAFC;
+}
+
+html.dark .btn-outline:hover {
+  border-color: #A78BFA;
+  color: #A78BFA;
+  background-color: rgba(99, 64, 181, 0.2);
+}
+
+/* --- Hero Badge Pill in Dark Mode --- */
+html.dark .hero-badge-pill {
+  background: rgba(99, 64, 181, 0.3);
+  color: #C4B5FD;
+}
+
+/* --- FAQ Category Button in Dark Mode --- */
+html.dark .faq-cat-btn {
+  background: #1E293B;
+  color: #CBD5E1;
+  border-color: #475569;
+}
+
+html.dark .faq-cat-btn:hover,
+html.dark .faq-cat-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* --- Location Pill in Dark Mode --- */
+html.dark .location-pill {
+  background: #1E293B;
+  color: #CBD5E1;
+  border-color: #475569;
+}
+
+html.dark .location-pill:hover,
+html.dark .location-pill.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* --- Social Pill in Dark Mode --- */
+html.dark .social-pill {
+  background: #334155;
+  color: #CBD5E1;
+}
+
+html.dark .social-pill:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+html.dark .social-login-btn {
+  background: #334155;
+  color: #CBD5E1;
+  border-color: #475569;
+}
+
+html.dark .social-login-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* --- Contact Card in Dark Mode --- */
+html.dark .contact-card {
+  background: #1E293B;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+/* --- Map Overlay Card in Dark Mode --- */
+html.dark .map-overlay-card {
+  background: #1E293B;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+/* --- Card Image Wrapper in Dark Mode --- */
+html.dark .card-img-wrapper {
+  background: #0F172A;
 }
