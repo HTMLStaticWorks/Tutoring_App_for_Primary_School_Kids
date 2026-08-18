@@ -6,7 +6,7 @@ html.dark {
   --bg-page: #0F172A;
   --bg-surface: #1E293B;
   --bg-surface-elevated: #334155;
-  --bg-muted: #1E293B;
+  --bg-muted: #334155;
 
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
@@ -14,7 +14,7 @@ html.dark {
   --border-color: #334155;
   --border-light: #1E293B;
 
-  --primary-light: rgba(79, 70, 229, 0.2);
+  --primary-light: rgba(99, 64, 181, 0.25);
   --secondary-light: rgba(6, 182, 212, 0.2);
   --accent-amber-light: rgba(245, 158, 11, 0.2);
   --accent-emerald-light: rgba(16, 185, 129, 0.2);
@@ -28,8 +28,19 @@ html.dark {
 }
 
 html.dark .site-header {
-  background-color: rgba(15, 23, 42, 0.92);
-  border-bottom-color: #334155;
+  background-color: var(--bg-surface);
+  border-bottom-color: var(--border-color);
+}
+
+html.dark .site-footer {
+  background-color: var(--bg-surface);
+  border-top-color: var(--border-color);
+}
+
+html.dark .cta-section {
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  color: #F8FAFC;
+  border-color: #334155;
 }
 
 html.dark .quiz-option-btn {
@@ -39,11 +50,103 @@ html.dark .quiz-option-btn {
 }
 
 html.dark .quiz-option-btn:hover {
-  background-color: rgba(79, 70, 229, 0.2);
-  border-color: #6366F1;
+  background-color: rgba(99, 64, 181, 0.25);
+  border-color: var(--primary);
 }
 
 html.dark .modal-content {
   background-color: #1E293B;
   color: #F8FAFC;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border-color: #334155;
+}
+
+html.dark input::placeholder,
+html.dark select::placeholder,
+html.dark textarea::placeholder {
+  color: #64748B;
+}
+
+html.dark .mobile-drawer {
+  background-color: #1E293B;
+  color: #F8FAFC;
+}
+
+html.dark .card,
+html.dark .subject-card,
+html.dark .step-card,
+html.dark .testimonial-card,
+html.dark .pricing-card,
+html.dark .quiz-box,
+html.dark .card-gradient-primary,
+html.dark .card-gradient-amber {
+  background: #1E293B !important;
+  border-color: #334155 !important;
+  color: #F8FAFC !important;
+}
+
+html.dark .card h1,
+html.dark .card h2,
+html.dark .card h3,
+html.dark .card h4,
+html.dark .card h5,
+html.dark .card h6,
+html.dark .card-gradient-primary h1,
+html.dark .card-gradient-primary h2,
+html.dark .card-gradient-primary h3,
+html.dark .card-gradient-primary h4,
+html.dark .card-gradient-primary h5,
+html.dark .card-gradient-primary h6,
+html.dark .card-gradient-amber h1,
+html.dark .card-gradient-amber h2,
+html.dark .card-gradient-amber h3,
+html.dark .card-gradient-amber h4,
+html.dark .card-gradient-amber h5,
+html.dark .card-gradient-amber h6 {
+  color: #F8FAFC !important;
+}
+
+html.dark .dropdown-menu {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+html.dark .dropdown-item {
+  color: #F8FAFC;
+}
+
+html.dark .dropdown-item:hover {
+  background-color: rgba(99, 64, 181, 0.25);
+  color: #A78BFA;
+}
+
+html.dark .worksheet-card,
+html.dark .review-card,
+html.dark .privacy-badge-card,
+html.dark .stat-card-pill,
+html.dark .comparison-table-wrapper {
+  background-color: #1E293B;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+html.dark .comparison-table th {
+  background-color: #0F172A;
+  color: #F8FAFC;
+}
+
+html.dark .comparison-table td {
+  border-color: #334155;
+  color: #94A3B8;
+}
+
+html.dark .status-pill-active {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34D399;
 }

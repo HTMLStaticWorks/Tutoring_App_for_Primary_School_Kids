@@ -27,8 +27,8 @@
         <div class="nav-item">
           <a href="index.html" class="nav-link">Home ▾</a>
           <div class="dropdown-menu">
-            <a href="index.html" class="dropdown-item">Home 1 (Playful)</a>
-            <a href="home-2.html" class="dropdown-item">Home 2 (Academic)</a>
+            <a href="index.html" class="dropdown-item">Playful</a>
+            <a href="home-2.html" class="dropdown-item">Academic</a>
           </div>
         </div>
 
@@ -61,23 +61,67 @@
         </div>
       </nav>
 
-      <div class="flex items-center" style="gap: 0.65rem;">
+      <!-- Desktop Actions (Hidden on mobile screens) -->
+      <div class="desktop-only-actions">
         <button class="theme-toggle-btn btn btn-outline btn-sm" title="Toggle Dark Mode"></button>
-        <button class="btn btn-outline btn-sm" title="Toggle RTL">RTL</button>
+        <button class="rtl-toggle-btn btn btn-outline btn-sm" title="Toggle RTL">RTL</button>
         <a href="auth.html" class="btn btn-primary btn-sm">Log In</a>
-        <button id="mobile-menu-open" class="mobile-menu-btn" title="Open Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round">
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-        </button>
       </div>
+
+      <!-- Mobile Hamburger Menu Button (Visible on mobile screens) -->
+      <button id="mobile-menu-open" class="mobile-menu-btn" title="Open Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
     </div>
   </header>
 
-  <main style="padding-top: 80px;">
+  <!-- Mobile Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="flex items-center justify-between" style="margin-bottom: 1.25rem;">
+      <span class="heading-sm">Menu & Settings</span>
+      <button id="mobile-menu-close" style="font-size: 1.5rem; background: none; border: none; cursor: pointer; color: var(--text-main);">✕</button>
+    </div>
+
+    <!-- Navigation Menu Links -->
+    <ul class="flex flex-col" style="gap: 0.75rem; margin-bottom: 1.25rem;">
+      <li>
+        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem; font-size: 0.95rem;">Home</div>
+        <ul style="display: flex; flex-direction: column; gap: 0.45rem; padding-left: 0.85rem; border-left: 2px solid var(--primary-light);">
+          <li><a href="index.html" class="nav-link">Playful</a></li>
+          <li><a href="home-2.html" class="nav-link">Academic</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link active">Programs</a></li>
+      <li><a href="fun.html" class="nav-link">Fun Zone</a></li>
+      <li><a href="pricing-booking.html" class="nav-link">Pricing</a></li>
+      <li><a href="support.html" class="nav-link">Support</a></li>
+      <li>
+        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem; font-size: 0.95rem;">Dashboards</div>
+        <ul style="display: flex; flex-direction: column; gap: 0.45rem; padding-left: 0.85rem; border-left: 2px solid var(--primary-light);">
+          <li><a href="parentdashboard.html" class="nav-link">Parent</a></li>
+          <li><a href="dashboard.html" class="nav-link">Admin</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Toggles & Account Actions placed at the bottom after navigation menu -->
+    <div style="display: flex; flex-direction: column; gap: 0.65rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+      <div style="display: flex; gap: 0.5rem;">
+        <button class="theme-toggle-btn btn btn-outline btn-sm flex items-center justify-center" style="flex: 1; gap: 0.35rem;" title="Toggle Dark Mode"></button>
+        <button class="rtl-toggle-btn btn btn-outline btn-sm flex items-center justify-center" style="flex: 1; gap: 0.35rem;" title="Toggle RTL">RTL</button>
+      </div>
+      <a href="auth.html" class="btn btn-primary btn-sm flex items-center justify-center" style="width: 100%;">Sign In / Register</a>
+    </div>
+  </div>
+
+  <main style="padding-top: 72px;">
     <!-- Section 1: Core Subjects Overview -->
     <section class="section-padding">
       <div class="container">
@@ -206,6 +250,56 @@
           </div>
         </div>
       </div>
+    <!-- Section 4: Downloadable Offline Practice Worksheets Hub -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-amber" style="margin-bottom: 0.75rem;">Offline Learning</div>
+          <h2 class="heading-lg">Printable Offline Practice Worksheets</h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">Complement digital micro-lessons with tactile paper exercises & fun coloring sheets.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="worksheet-card">
+            <div>
+              <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Math Practice • PDF</div>
+              <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Grade 3 Fractions Pizza Sheet</h3>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem;">
+                Coloring and fraction division exercises for pizza slices, pies, and bar models (12 pages).
+              </p>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-outline btn-sm flex items-center justify-center" onclick="showToast('📥 Downloading Fraction Worksheet PDF...', '📄');" style="gap: 0.35rem;">
+              <span>Download PDF ➔</span>
+            </a>
+          </div>
+
+          <div class="worksheet-card">
+            <div>
+              <div class="badge badge-emerald" style="margin-bottom: 0.75rem;">Phonics • PDF</div>
+              <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Silent Letter Detective Quest</h3>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem;">
+                Trace, circle, and solve silent 'kn', 'wr', and 'gh' word puzzles for Grade 2-3 readers (8 pages).
+              </p>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-outline btn-sm flex items-center justify-center" onclick="showToast('📥 Downloading Phonics Worksheet PDF...', '📄');" style="gap: 0.35rem;">
+              <span>Download PDF ➔</span>
+            </a>
+          </div>
+
+          <div class="worksheet-card">
+            <div>
+              <div class="badge badge-purple" style="margin-bottom: 0.75rem;">STEM & Logic • PDF</div>
+              <h3 class="heading-sm" style="margin-bottom: 0.5rem;">Solar System Orbit Tracer</h3>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem;">
+                Planet distance comparison, rocket maze puzzles, and constellations star chart (10 pages).
+              </p>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-outline btn-sm flex items-center justify-center" onclick="showToast('📥 Downloading Science Worksheet PDF...', '📄');" style="gap: 0.35rem;">
+              <span>Download PDF ➔</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -215,7 +309,7 @@
       <div class="footer-grid">
         <!-- 1. Brand Area -->
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="color: #fff;">
+          <a href="index.html" class="nav-logo">
             <img src="assets/logo1.png" alt="BrightSparks Logo" class="logo-img" />
             <span>BrightSparks</span>
           </a>
@@ -267,7 +361,7 @@
         <!-- 4. Newsletter & Social Logins -->
         <div>
           <h4 class="footer-title">Stay Connected</h4>
-          <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 0.75rem;">
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
             Subscribe to our weekly learning digest.
           </p>
           <form class="footer-newsletter"
@@ -280,7 +374,7 @@
               </button>
             </div>
           </form>
-          <div style="font-size: 0.8rem; color: #64748B; margin-bottom: 0.5rem;">Or quick login with:</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Or quick login with:</div>
           <div class="flex" style="gap: 0.5rem;">
             <a href="auth.html" class="social-login-btn" title="Sign in with Google">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">

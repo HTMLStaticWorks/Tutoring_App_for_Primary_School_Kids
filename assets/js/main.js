@@ -21,7 +21,7 @@ const GLOBE_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" s
 function updateThemeIcons(isDark) {
   const themeToggles = document.querySelectorAll('.theme-toggle-btn');
   themeToggles.forEach(btn => {
-    btn.innerHTML = isDark ? SUN_SVG : MOON_SVG;
+    btn.innerHTML = isDark ? `${SUN_SVG} <span>Light</span>` : `${MOON_SVG} <span>Dark</span>`;
   });
 }
 
@@ -51,7 +51,7 @@ function initTheme() {
 
 /* --- 2. RTL Layout Toggle --- */
 function initRtl() {
-  const rtlToggles = document.querySelectorAll('.rtl-toggle-btn');
+  const rtlToggles = document.querySelectorAll('.rtl-toggle-btn, [title="Toggle RTL"]');
   const savedRtl = localStorage.getItem('brightsparks_rtl') === 'true';
 
   if (savedRtl) {
@@ -61,7 +61,7 @@ function initRtl() {
   }
 
   rtlToggles.forEach(btn => {
-    btn.innerHTML = GLOBE_SVG;
+    btn.innerHTML = `${GLOBE_SVG} <span>RTL</span>`;
     btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('dir') === 'rtl';
       const next = !current;
