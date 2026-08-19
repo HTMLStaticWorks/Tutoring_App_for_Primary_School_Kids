@@ -57,39 +57,22 @@
   <div id="mobile-drawer" class="mobile-drawer">
     <div class="flex items-center justify-between" style="margin-bottom: 1.25rem;">
       <span class="heading-sm">Dashboard Menu</span>
-      <button id="mobile-menu-close" style="font-size: 1.5rem; background: none; border: none; cursor: pointer; color: var(--text-main);">✕</button>
+      <button id="mobile-menu-close"
+        style="font-size: 1.5rem; background: none; border: none; cursor: pointer; color: var(--text-main);">✕</button>
     </div>
 
-    <!-- Navigation Menu Links -->
-    <ul class="flex flex-col" style="gap: 0.75rem; margin-bottom: 1.25rem;">
-      <li>
-        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem; font-size: 0.95rem;">Home</div>
-        <ul style="display: flex; flex-direction: column; gap: 0.45rem; padding-left: 0.85rem; border-left: 2px solid var(--primary-light);">
-          <li><a href="index.html" class="nav-link">Playful</a></li>
-          <li><a href="home-2.html" class="nav-link">Academic</a></li>
-        </ul>
-      </li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="services.html" class="nav-link">Programs</a></li>
-      <li><a href="fun.html" class="nav-link">Fun Zone</a></li>
-      <li><a href="pricing-booking.html" class="nav-link">Pricing</a></li>
-      <li><a href="support.html" class="nav-link">Support</a></li>
-      <li>
-        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem; font-size: 0.95rem;">Dashboards</div>
-        <ul style="display: flex; flex-direction: column; gap: 0.45rem; padding-left: 0.85rem; border-left: 2px solid var(--primary-light);">
-          <li><a href="parentdashboard.html" class="nav-link">Parent</a></li>
-          <li><a href="dashboard.html" class="nav-link active">Admin</a></li>
-        </ul>
-      </li>
-    </ul>
-
     <!-- Toggles & Account Actions placed at the bottom after navigation menu -->
-    <div style="display: flex; flex-direction: column; gap: 0.65rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+    <div
+      style="display: flex; flex-direction: column; gap: 0.65rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
       <div style="display: flex; gap: 0.5rem;">
-        <button class="theme-toggle-btn btn btn-outline btn-sm flex items-center justify-center" style="flex: 1; gap: 0.35rem;" title="Toggle Dark Mode"></button>
-        <button class="rtl-toggle-btn btn btn-outline btn-sm flex items-center justify-center" style="flex: 1; gap: 0.35rem;" title="Toggle RTL">RTL</button>
+        <button class="theme-toggle-btn btn btn-outline btn-sm flex items-center justify-center"
+          style="flex: 1; gap: 0.35rem;" title="Toggle Dark Mode"></button>
+        <button class="rtl-toggle-btn btn btn-outline btn-sm flex items-center justify-center"
+          style="flex: 1; gap: 0.35rem;" title="Toggle RTL">RTL</button>
       </div>
-      <a href="index.html" class="btn btn-outline btn-sm flex items-center justify-center" style="width: 100%; gap: 0.35rem;" onclick="showToast('Logged out successfully! Redirecting to Home...', '👋');">Logout</a>
+      <a href="index.html" class="btn btn-outline btn-sm flex items-center justify-center"
+        style="width: 100%; gap: 0.35rem;"
+        onclick="showToast('Logged out successfully! Redirecting to Home...', '👋');">Logout</a>
     </div>
   </div>
 
@@ -101,407 +84,169 @@
         <div class="card card-gradient-primary" style="margin-bottom: 2rem;">
           <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
             <div>
-              <div class="badge badge-primary" style="margin-bottom: 0.25rem;">BrightSparks Management Hub</div>
-              <h1 class="heading-md">Platform Operations & Learning Dashboard</h1>
+              <div class="badge badge-primary" style="margin-bottom: 0.25rem;">Admin Dashboard</div>
+              <h1 class="heading-md">Platform Management & Analytics</h1>
               <p style="color: var(--text-muted); font-size: 0.95rem;">Monitor student progress, track scores, manage
                 curriculum, parents, and subscriptions.</p>
             </div>
 
-            <!-- Dashboard Role Switcher Tabs (Simple Parent & Admin text) -->
-            <div class="flex" style="gap: 0.5rem; flex-wrap: wrap;">
-              <button class="dash-role-tab btn btn-primary btn-sm active" data-tab="parent-dash-view">Parent
-                Dashboard</button>
-              <button class="dash-role-tab btn btn-outline btn-sm" data-tab="admin-dash-view">Admin Dashboard</button>
-              <a href="fun.html" class="btn btn-outline btn-sm"
-                style="border-color: var(--accent-amber); color: #B45309; font-weight: 700;">Kids Fun Zone ➔</a>
-            </div>
+
           </div>
         </div>
 
-        <!-- =========================================================================
-             1. PARENT DASHBOARD VIEW
-             ========================================================================= -->
-        <div id="parent-dash-view" class="dash-view-panel">
-
-          <!-- Parent Banner & Multi-Child Switcher -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
-              <div class="flex items-center" style="gap: 1rem;">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80"
-                  alt="Parent Avatar" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover;" />
-                <div>
-                  <h2 class="heading-sm">Parent: Sarah Miller</h2>
-                  <p style="color: var(--text-muted); font-size: 0.9rem;">Subscription Plan: <strong
-                      style="color: var(--primary);">Bright Scholar ($59/mo)</strong> | Active</p>
-                </div>
-              </div>
-
-              <!-- Child Selector -->
-              <div class="flex items-center" style="gap: 0.5rem;">
-                <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">Select Student:</span>
-                <button class="parent-child-tab-btn btn btn-primary btn-sm active" data-child-id="child-1">Maya (Grade
-                  3)</button>
-                <button class="parent-child-tab-btn btn btn-outline btn-sm" data-child-id="child-2">Leo (Grade
-                  1)</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel Child 1 (Maya) -->
-          <div id="panel-child-1" class="parent-child-panel">
-
-            <!-- Key Metrics Overview Cards -->
-            <div class="grid-4" style="margin-bottom: 2rem;">
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
-                <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">142 Mins
-                </div>
-                <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 600;">↑ 12% vs last week</div>
-              </div>
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
-                <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">92.4%
-                </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Passed 18 of 20 quizzes</div>
-              </div>
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Star Coins Balance</div>
-                <div class="flex items-center"
-                  style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
-                    <path
-                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                  <span class="user-stars-count">480</span>
-                </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Unlocked 4 Avatar items</div>
-              </div>
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
-                <div class="flex items-center"
-                  style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
-                    <path
-                      d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                  </svg>
-                  <span class="user-streak-count">7</span> Days
-                </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Record streak achieved!</div>
-              </div>
-            </div>
-
-            <div class="grid-2" style="margin-bottom: 2rem;">
-              <!-- Enrolled Subjects & Progress -->
-              <div class="card">
-                <h3 class="heading-sm" style="margin-bottom: 1rem;">Maya's Subject Progress</h3>
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                  <div
-                    style="padding: 0.9rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-surface);">
-                    <div class="flex justify-between"
-                      style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem;">
-                      <span>Primary Mathematics</span>
-                      <span style="color: var(--primary);">78% Complete</span>
-                    </div>
-                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">Next: Multiplying
-                      by 8 Treasure Hunt</div>
-                    <div
-                      style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
-                      <div style="width: 78%; height: 100%; background: var(--primary);"></div>
-                    </div>
-                  </div>
-
-                  <div
-                    style="padding: 0.9rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-surface);">
-                    <div class="flex justify-between"
-                      style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem;">
-                      <span>Phonics & Creative Reading</span>
-                      <span style="color: var(--accent-emerald);">64% Complete</span>
-                    </div>
-                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">Next: Silent K & G
-                      Detective</div>
-                    <div
-                      style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
-                      <div style="width: 64%; height: 100%; background: var(--accent-emerald);"></div>
-                    </div>
-                  </div>
-
-                  <div
-                    style="padding: 0.9rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-surface);">
-                    <div class="flex justify-between"
-                      style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem;">
-                      <span>Science Explorers</span>
-                      <span style="color: var(--accent-amber);">85% Complete</span>
-                    </div>
-                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">Next: Solar System
-                      & Mars Rover</div>
-                    <div
-                      style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
-                      <div style="width: 85%; height: 100%; background: var(--accent-amber);"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Screen Time Limit & Tutor Notes -->
-              <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <div class="card">
-                  <div class="flex items-center justify-between" style="margin-bottom: 0.75rem;">
-                    <h3 class="heading-sm flex items-center" style="gap: 0.5rem;">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                      </svg>
-                      <span>Daily Screen-Time Limit Control</span>
-                    </h3>
-                    <span id="screen-time-val" class="badge badge-primary">25 Mins/Day</span>
-                  </div>
-                  <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
-                    Adjust maximum daily active learning time for Maya. Changes take effect instantly.
-                  </p>
-                  <input id="screen-time-slider" type="range" min="15" max="60" step="5" value="25"
-                    style="width: 100%; accent-color: var(--primary); cursor: pointer;" />
-                </div>
-
-                <div class="card">
-                  <h3 class="heading-sm flex items-center" style="gap: 0.5rem; margin-bottom: 0.75rem;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                      <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                    </svg>
-                    <span>Tutor Feedback Notes</span>
-                  </h3>
-                  <div
-                    style="font-size: 0.88rem; color: var(--text-main); background: var(--bg-page); padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.2rem;">Tutor Emma Sterling
-                      (Yesterday):</div>
-                    "Maya demonstrated fantastic confidence with equivalent fractions today! She quickly solved visual
-                    2/4 and 1/2 pizza problems."
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Student Detailed Learning Progress Maintenance Table -->
-            <div class="card">
-              <div class="flex items-center justify-between"
-                style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
-                <div>
-                  <h3 class="heading-sm">Student Progress & Quiz Activity History</h3>
-                  <p style="font-size: 0.85rem; color: var(--text-muted);">Detailed maintenance log of all lessons
-                    completed, quiz scores, and time spent.</p>
-                </div>
-                <button class="btn btn-outline btn-sm" onclick="showToast('Exporting student report PDF...', '📄')">📥
-                  Export Student Log</button>
-              </div>
-
-              <div class="table-responsive-wrapper">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th style="min-width: 110px;">Date</th>
-                      <th style="min-width: 130px;">Subject</th>
-                      <th style="min-width: 220px;">Lesson / Quiz Title</th>
-                      <th style="min-width: 80px;">Score</th>
-                      <th style="min-width: 110px;">Status</th>
-                      <th style="min-width: 100px;">Time Spent</th>
-                      <th style="min-width: 90px;">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                      <td style="padding: 0.75rem; font-weight: 600;">Aug 14, 2026</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Mathematics</span></td>
-                      <td style="padding: 0.75rem; font-weight: 700;">Pirate Treasure: Multiplying by 8</td>
-                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">95%</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Passed ⭐</span></td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">22 mins</td>
-                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
-                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                      <td style="padding: 0.75rem; font-weight: 600;">Aug 13, 2026</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">English Phonics</span></td>
-                      <td style="padding: 0.75rem; font-weight: 700;">Silent K & G Consonant Detective</td>
-                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">90%</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Passed ⭐</span></td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">18 mins</td>
-                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
-                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                      <td style="padding: 0.75rem; font-weight: 600;">Aug 12, 2026</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-amber">Science</span></td>
-                      <td style="padding: 0.75rem; font-weight: 700;">Solar System & Mars Rover Exploration</td>
-                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">100%</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-purple">Excelled 🌟</span></td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">25 mins</td>
-                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
-                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                      <td style="padding: 0.75rem; font-weight: 600;">Aug 10, 2026</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-purple">Logic Puzzles</span></td>
-                      <td style="padding: 0.75rem; font-weight: 700;">Double-Digit Logic Sequences</td>
-                      <td style="padding: 0.75rem; font-weight: 800; color: var(--primary);">88%</td>
-                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Passed ⭐</span></td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">15 mins</td>
-                      <td style="padding: 0.75rem;"><button class="btn btn-outline btn-sm"
-                          onclick="showToast('Loading quiz breakdown report...', '📊')">Review</button></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Panel Child 2 (Leo) -->
-          <div id="panel-child-2" class="parent-child-panel hidden">
-            <div class="grid-4" style="margin-bottom: 2rem;">
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
-                <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">95 Mins
-                </div>
-              </div>
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
-                <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">88.0%
-                </div>
-              </div>
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Earned Star Coins</div>
-                <div class="flex items-center"
-                  style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
-                    <path
-                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                  <span>310</span>
-                </div>
-              </div>
-              <div class="card">
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
-                <div class="flex items-center"
-                  style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
-                    <path
-                      d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                  </svg>
-                  <span>4 Days</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- =========================================================================
-             2. ADMIN DASHBOARD VIEW (Management Dashboard for Administrators)
-             ========================================================================= -->
-        <div id="admin-dash-view" class="dash-view-panel hidden">
+        <div id="admin-dash-view" class="dash-view-panel">
 
           <!-- Admin KPI Overview Cards -->
-          <div class="grid-4" style="margin-bottom: 2rem;">
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Total Active Students</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">1,420</div>
-              <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 600;">↑ 45 enrolled this month
+          <div class="grid-4" style="margin-bottom: 1.5rem; gap: 1.25rem;">
+            <div class="card" style="padding: 1.25rem;">
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">
+                Total Active Students</div>
+              <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 0.15rem 0;">1,420</div>
+              <div style="font-size: 0.75rem; color: var(--accent-emerald); font-weight: 600;">↑ 45 enrolled this month
               </div>
             </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Total Parent Accounts</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">1,150
+            <div class="card" style="padding: 1.25rem;">
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">
+                Total Parent Accounts</div>
+              <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent-emerald); margin: 0.15rem 0;">1,150
               </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">98.2% account retention</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">98.2% account retention</div>
             </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Published Lessons</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0;">148</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Across 4 Core Subjects</div>
+            <div class="card" style="padding: 1.25rem;">
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">
+                Published Lessons</div>
+              <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent-amber); margin: 0.15rem 0;">148</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Across 4 Core Subjects</div>
             </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Monthly Revenue</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: #8B5CF6; margin: 0.25rem 0;">$42,500</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">88% Annual Subscriptions</div>
+            <div class="card" style="padding: 1.25rem;">
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">
+                Monthly Revenue</div>
+              <div style="font-size: 1.6rem; font-weight: 800; color: #8B5CF6; margin: 0.15rem 0;">$42,500</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">88% Annual Subscriptions</div>
+            </div>
+          </div>
+
+          <!-- Platform Analytics -->
+          <div class="grid-2" style="margin-bottom: 2rem; gap: 1.25rem;">
+            <div class="card" style="padding: 1.25rem;">
+              <h3 class="heading-sm" style="margin-bottom: 1rem;">Student Engagement</h3>
+              <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                <div>
+                  <div class="flex justify-between" style="font-size: 0.85rem; margin-bottom: 0.25rem;">
+                    <span>Active Daily Learners</span>
+                    <span style="font-weight: 700; color: var(--primary);">68%</span>
+                  </div>
+                  <div
+                    style="width: 100%; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 68%; height: 100%; background: var(--primary);"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between" style="font-size: 0.85rem; margin-bottom: 0.25rem;">
+                    <span>Average Quiz Pass Rate</span>
+                    <span style="font-weight: 700; color: var(--accent-emerald);">82%</span>
+                  </div>
+                  <div
+                    style="width: 100%; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 82%; height: 100%; background: var(--accent-emerald);"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between" style="font-size: 0.85rem; margin-bottom: 0.25rem;">
+                    <span>Course Completion Rate</span>
+                    <span style="font-weight: 700; color: var(--accent-amber);">45%</span>
+                  </div>
+                  <div
+                    style="width: 100%; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 45%; height: 100%; background: var(--accent-amber);"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding: 1.25rem;">
+              <h3 class="heading-sm" style="margin-bottom: 1rem;">Subscription Breakdown</h3>
+              <div class="flex items-center" style="gap: 1.5rem;">
+                <!-- Simulated Chart -->
+                <div
+                  style="width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(var(--primary) 0% 60%, var(--accent-emerald) 60% 85%, var(--border-color) 85% 100%);">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; flex: 1;">
+                  <div class="flex justify-between items-center" style="font-size: 0.85rem;">
+                    <div class="flex items-center" style="gap: 0.5rem;">
+                      <div style="width: 10px; height: 10px; border-radius: 2px; background: var(--primary);"></div>
+                      <span>Bright Scholar (Annual)</span>
+                    </div>
+                    <strong>60%</strong>
+                  </div>
+                  <div class="flex justify-between items-center" style="font-size: 0.85rem;">
+                    <div class="flex items-center" style="gap: 0.5rem;">
+                      <div style="width: 10px; height: 10px; border-radius: 2px; background: var(--accent-emerald);">
+                      </div>
+                      <span>Monthly Starter</span>
+                    </div>
+                    <strong>25%</strong>
+                  </div>
+                  <div class="flex justify-between items-center" style="font-size: 0.85rem;">
+                    <div class="flex items-center" style="gap: 0.5rem;">
+                      <div style="width: 10px; height: 10px; border-radius: 2px; background: var(--border-color);">
+                      </div>
+                      <span>Free Trial / Inactive</span>
+                    </div>
+                    <strong>15%</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Admin Action Sub-Nav -->
-          <div class="card" style="margin-bottom: 2rem;">
+          <div class="card" style="margin-bottom: 1.5rem; padding: 1rem 1.25rem;">
             <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
               <div class="flex" style="gap: 0.5rem; flex-wrap: wrap;">
-                <button class="admin-subtab-btn btn btn-primary btn-sm active flex items-center" style="gap: 0.4rem;"
-                  data-subtab="admin-students-panel">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                  <span>Student & Parent Roster</span>
-                </button>
-                <button class="admin-subtab-btn btn btn-outline btn-sm flex items-center" style="gap: 0.4rem;" data-subtab="admin-lessons-panel">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                  </svg>
-                  <span>Lessons & Curriculum</span>
-                </button>
-                <button class="admin-subtab-btn btn btn-outline btn-sm flex items-center" style="gap: 0.4rem;" data-subtab="admin-quizzes-panel">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                  <span>Quiz Question Bank</span>
-                </button>
-                <button class="admin-subtab-btn btn btn-outline btn-sm flex items-center" style="gap: 0.4rem;" data-subtab="admin-subscriptions-panel">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                    <line x1="1" y1="10" x2="23" y2="10"></line>
-                  </svg>
-                  <span>Subscriptions & Plans</span>
-                </button>
+                <button class="admin-subtab-btn btn btn-primary btn-sm active"
+                  data-subtab="admin-students-panel">Students</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm"
+                  data-subtab="admin-parents-panel">Parents</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm"
+                  data-subtab="admin-lessons-panel">Curriculum</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm"
+                  data-subtab="admin-quizzes-panel">Quizzes</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm"
+                  data-subtab="admin-subscriptions-panel">Subscriptions</button>
+                <button class="admin-subtab-btn btn btn-outline btn-sm"
+                  data-subtab="admin-reports-panel">Reports</button>
               </div>
 
               <div class="flex" style="gap: 0.5rem;">
                 <button class="btn btn-primary btn-sm flex items-center" style="gap: 0.35rem;"
                   data-modal-target="modal-add-student">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                  <span>+ Add Student</span>
+                  <span>+ Add</span>
                 </button>
                 <button class="btn btn-outline btn-sm flex items-center" style="gap: 0.35rem;"
                   data-modal-target="modal-send-broadcast">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                  </svg>
                   <span>Broadcast Alert</span>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- SUBTAB 1: Student & Parent Maintenance Roster -->
+          <!-- SUBTAB 1: Students Maintenance -->
           <div id="admin-students-panel" class="admin-subpanel">
             <div class="card">
               <div class="flex items-center justify-between"
                 style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
                 <div>
-                  <h3 class="heading-sm">Student & Parent Maintenance Roster</h3>
-                  <p style="font-size: 0.85rem; color: var(--text-muted);">View, filter, edit, activate/deactivate, or
-                    add student and parent details.</p>
+                  <h3 class="heading-sm">Students Roster</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">View, filter, edit, or deactivate student
+                    accounts.</p>
                 </div>
-
-                <!-- Search & Grade Filter Controls -->
                 <div class="flex items-center" style="gap: 0.75rem; flex-wrap: wrap;">
-                  <input id="admin-student-search" type="text" placeholder="Search student or email..."
+                  <input type="text" placeholder="Search student name..."
                     style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem;" />
-                  <select id="admin-grade-filter"
+                  <select
                     style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem; background: var(--bg-surface); color: var(--text-main);">
-                    <option value="all">All Grade Levels</option>
+                    <option value="all">All Grades</option>
                     <option value="Grade 1">Grade 1</option>
                     <option value="Grade 2">Grade 2</option>
                     <option value="Grade 3">Grade 3</option>
@@ -511,25 +256,21 @@
               </div>
 
               <div class="table-responsive-wrapper">
-                <table id="admin-student-table" class="data-table data-table-wide">
+                <table class="data-table data-table-wide">
                   <thead>
                     <tr>
                       <th style="min-width: 140px;">Student Name</th>
-                      <th style="min-width: 180px;">Parent Email</th>
                       <th style="min-width: 110px;">Grade Level</th>
-                      <th style="min-width: 160px;">Enrolled Subjects</th>
                       <th style="min-width: 120px;">Progress</th>
                       <th style="min-width: 90px;">Quiz Avg</th>
-                      <th style="min-width: 110px;">Account Status</th>
-                      <th style="min-width: 160px;">Maintenance Actions</th>
+                      <th style="min-width: 110px;">Status</th>
+                      <th style="min-width: 160px;">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 3">
+                    <tr style="border-bottom: 1px solid var(--border-color);">
                       <td style="padding: 0.75rem; font-weight: 700;">Maya Miller</td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">sarah.miller@example.com</td>
                       <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 3</span></td>
-                      <td style="padding: 0.75rem;">Math, Phonics, Science</td>
                       <td style="padding: 0.75rem;">
                         <div class="flex items-center" style="gap: 0.5rem;">
                           <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
@@ -542,18 +283,14 @@
                       <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
                       <td style="padding: 0.75rem;">
                         <div class="flex" style="gap: 0.35rem;">
-                          <button class="btn btn-outline btn-sm" onclick="editStudent('Maya Miller')">Edit</button>
-                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Deactivate</button>
-                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
-                            onclick="deleteStudentRow(this)">Delete</button>
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Deactivate</button>
                         </div>
                       </td>
                     </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 1">
+                    <tr style="border-bottom: 1px solid var(--border-color);">
                       <td style="padding: 0.75rem; font-weight: 700;">Leo Miller</td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">sarah.miller@example.com</td>
                       <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 1</span></td>
-                      <td style="padding: 0.75rem;">Math, Phonics</td>
                       <td style="padding: 0.75rem;">
                         <div class="flex items-center" style="gap: 0.5rem;">
                           <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
@@ -566,18 +303,14 @@
                       <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
                       <td style="padding: 0.75rem;">
                         <div class="flex" style="gap: 0.35rem;">
-                          <button class="btn btn-outline btn-sm" onclick="editStudent('Leo Miller')">Edit</button>
-                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Deactivate</button>
-                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
-                            onclick="deleteStudentRow(this)">Delete</button>
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Deactivate</button>
                         </div>
                       </td>
                     </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 4">
+                    <tr style="border-bottom: 1px solid var(--border-color);">
                       <td style="padding: 0.75rem; font-weight: 700;">Sophia Davis</td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">robert.davis@example.com</td>
                       <td style="padding: 0.75rem;"><span class="badge badge-purple">Grade 4</span></td>
-                      <td style="padding: 0.75rem;">Math, Science, Logic</td>
                       <td style="padding: 0.75rem;">
                         <div class="flex items-center" style="gap: 0.5rem;">
                           <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
@@ -590,18 +323,14 @@
                       <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
                       <td style="padding: 0.75rem;">
                         <div class="flex" style="gap: 0.35rem;">
-                          <button class="btn btn-outline btn-sm" onclick="editStudent('Sophia Davis')">Edit</button>
-                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Deactivate</button>
-                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
-                            onclick="deleteStudentRow(this)">Delete</button>
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Deactivate</button>
                         </div>
                       </td>
                     </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);" data-grade="Grade 2">
+                    <tr style="border-bottom: 1px solid var(--border-color);">
                       <td style="padding: 0.75rem; font-weight: 700;">Ethan Walker</td>
-                      <td style="padding: 0.75rem; color: var(--text-muted);">jessica.walker@example.com</td>
                       <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 2</span></td>
-                      <td style="padding: 0.75rem;">Math, Phonics</td>
                       <td style="padding: 0.75rem;">
                         <div class="flex items-center" style="gap: 0.5rem;">
                           <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
@@ -615,10 +344,237 @@
                           style="background: #FEE2E2; color: #991B1B;">Paused</span></td>
                       <td style="padding: 0.75rem;">
                         <div class="flex" style="gap: 0.35rem;">
-                          <button class="btn btn-outline btn-sm" onclick="editStudent('Ethan Walker')">Edit</button>
-                          <button class="btn btn-outline btn-sm" onclick="toggleStudentStatus(this)">Activate</button>
-                          <button class="btn btn-outline btn-sm" style="color: #EF4444;"
-                            onclick="deleteStudentRow(this)">Delete</button>
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Activate</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Olivia Smith</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 1</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 32%; height: 100%; background: var(--accent-amber);"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">32%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">89.2%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Deactivate</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Noah Jones</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 3</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 88%; height: 100%; background: var(--primary);"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">88%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--accent-emerald);">94.5%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Deactivate</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Emma Brown</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-purple">Grade 4</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 55%; height: 100%; background: var(--accent-amber);"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">55%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: var(--primary);">82.0%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Deactivate</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Liam Taylor</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Grade 2</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex items-center" style="gap: 0.5rem;">
+                          <div style="width: 70px; height: 6px; background: var(--border-color); border-radius: 3px;">
+                            <div style="width: 15%; height: 100%; background: #EF4444;"></div>
+                          </div>
+                          <span style="font-size: 0.8rem; font-weight: 700;">15%</span>
+                        </div>
+                      </td>
+                      <td style="padding: 0.75rem; font-weight: 800; color: #EF4444;">65.5%</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Deactivate</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBTAB 1b: Parents Maintenance -->
+          <div id="admin-parents-panel" class="admin-subpanel hidden">
+            <div class="card">
+              <div class="flex items-center justify-between"
+                style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <h3 class="heading-sm">Parents Roster</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Manage parent accounts and subscriptions.</p>
+                </div>
+                <div class="flex items-center" style="gap: 0.75rem; flex-wrap: wrap;">
+                  <input type="text" placeholder="Search email..."
+                    style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem;" />
+                  <select
+                    style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem; background: var(--bg-surface); color: var(--text-main);">
+                    <option value="all">All Plans</option>
+                    <option value="annual">Bright Scholar (Annual)</option>
+                    <option value="monthly">Monthly Starter</option>
+                    <option value="free">Free Trial</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="table-responsive-wrapper">
+                <table class="data-table data-table-wide">
+                  <thead>
+                    <tr>
+                      <th style="min-width: 140px;">Parent Name</th>
+                      <th style="min-width: 180px;">Email</th>
+                      <th style="min-width: 110px;">Children</th>
+                      <th style="min-width: 160px;">Subscription Plan</th>
+                      <th style="min-width: 110px;">Status</th>
+                      <th style="min-width: 160px;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Sarah Miller</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">sarah.miller@example.com</td>
+                      <td style="padding: 0.75rem;">2</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Bright Scholar</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Robert Davis</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">robert.davis@example.com</td>
+                      <td style="padding: 0.75rem;">1</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Monthly Starter</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Jessica Walker</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">jessica.walker@example.com</td>
+                      <td style="padding: 0.75rem;">1</td>
+                      <td style="padding: 0.75rem;"><span class="badge"
+                          style="background: var(--border-color); color: var(--text-main);">Free Trial</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge"
+                          style="background: #FEE2E2; color: #991B1B;">Expired</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Michael Walker</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">michael.w@example.com</td>
+                      <td style="padding: 0.75rem;">1</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Bright Scholar</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge"
+                          style="background: #FEE2E2; color: #991B1B;">Paused</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">David Smith</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">d.smith88@example.com</td>
+                      <td style="padding: 0.75rem;">1</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Monthly Starter</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Amanda Jones</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">amanda.j@example.com</td>
+                      <td style="padding: 0.75rem;">1</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Bright Scholar</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Chris Brown</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">chris.brown@example.com</td>
+                      <td style="padding: 0.75rem;">1</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Monthly Starter</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Ashley Taylor</td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">ashley.t@example.com</td>
+                      <td style="padding: 0.75rem;">1</td>
+                      <td style="padding: 0.75rem;"><span class="badge"
+                          style="background: var(--border-color); color: var(--text-main);">Free Trial</span></td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Active</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">Edit</button>
+                          <button class="btn btn-outline btn-sm">Billing</button>
                         </div>
                       </td>
                     </tr>
@@ -757,6 +713,107 @@
             </div>
           </div>
 
+          <!-- SUBTAB 5: Reports -->
+          <div id="admin-reports-panel" class="admin-subpanel hidden">
+            <div class="card">
+              <div class="flex items-center justify-between" style="margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <h3 class="heading-sm">Quarterly & Half-Yearly Reports</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Generate, view, and export student performance and analytics reports.</p>
+                </div>
+                <div class="flex items-center" style="gap: 0.75rem; flex-wrap: wrap;">
+                  <input type="text" placeholder="Search student name..." style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem;" />
+                  <select style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem; background: var(--bg-surface); color: var(--text-main);">
+                    <option value="all">All Report Types</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="half-yearly">Half-Yearly</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="table-responsive-wrapper">
+                <table class="data-table data-table-wide">
+                  <thead>
+                    <tr>
+                      <th style="min-width: 160px;">Student Name</th>
+                      <th style="min-width: 140px;">Report Period</th>
+                      <th style="min-width: 120px;">Report Type</th>
+                      <th style="min-width: 110px;">Generated On</th>
+                      <th style="min-width: 110px;">Status</th>
+                      <th style="min-width: 140px;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Maya Miller</td>
+                      <td style="padding: 0.75rem;">Q2 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Quarterly</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">Jul 01, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Available</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">View</button>
+                          <button class="btn btn-outline btn-sm">Download</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Leo Miller</td>
+                      <td style="padding: 0.75rem;">H1 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-amber">Half-Yearly</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">Jul 05, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Available</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">View</button>
+                          <button class="btn btn-outline btn-sm">Download</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Sophia Davis</td>
+                      <td style="padding: 0.75rem;">Q2 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Quarterly</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">Jul 01, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Available</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">View</button>
+                          <button class="btn btn-outline btn-sm">Download</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Ethan Walker</td>
+                      <td style="padding: 0.75rem;">H1 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-amber">Half-Yearly</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">Jul 05, 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-emerald">Available</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm">View</button>
+                          <button class="btn btn-outline btn-sm">Download</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.75rem; font-weight: 700;">Olivia Smith</td>
+                      <td style="padding: 0.75rem;">Q2 2026</td>
+                      <td style="padding: 0.75rem;"><span class="badge badge-primary">Quarterly</span></td>
+                      <td style="padding: 0.75rem; color: var(--text-muted);">Pending</td>
+                      <td style="padding: 0.75rem;"><span class="badge" style="background: var(--border-color); color: var(--text-main);">Generating</span></td>
+                      <td style="padding: 0.75rem;">
+                        <div class="flex" style="gap: 0.35rem;">
+                          <button class="btn btn-outline btn-sm" disabled style="opacity: 0.5; cursor: not-allowed;">View</button>
+                          <button class="btn btn-outline btn-sm" disabled style="opacity: 0.5; cursor: not-allowed;">Download</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

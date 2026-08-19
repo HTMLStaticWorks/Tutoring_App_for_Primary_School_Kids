@@ -60,29 +60,6 @@
       <button id="mobile-menu-close" style="font-size: 1.5rem; background: none; border: none; cursor: pointer; color: var(--text-main);">✕</button>
     </div>
 
-    <!-- Navigation Menu Links -->
-    <ul class="flex flex-col" style="gap: 0.75rem; margin-bottom: 1.25rem;">
-      <li>
-        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem; font-size: 0.95rem;">Home</div>
-        <ul style="display: flex; flex-direction: column; gap: 0.45rem; padding-left: 0.85rem; border-left: 2px solid var(--primary-light);">
-          <li><a href="index.html" class="nav-link">Playful</a></li>
-          <li><a href="home-2.html" class="nav-link">Academic</a></li>
-        </ul>
-      </li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="services.html" class="nav-link">Programs</a></li>
-      <li><a href="fun.html" class="nav-link">Fun Zone</a></li>
-      <li><a href="pricing-booking.html" class="nav-link">Pricing</a></li>
-      <li><a href="support.html" class="nav-link">Support</a></li>
-      <li>
-        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem; font-size: 0.95rem;">Dashboards</div>
-        <ul style="display: flex; flex-direction: column; gap: 0.45rem; padding-left: 0.85rem; border-left: 2px solid var(--primary-light);">
-          <li><a href="parentdashboard.html" class="nav-link active">Parent</a></li>
-          <li><a href="dashboard.html" class="nav-link">Admin</a></li>
-        </ul>
-      </li>
-    </ul>
-
     <!-- Toggles & Account Actions placed at the bottom after navigation menu -->
     <div style="display: flex; flex-direction: column; gap: 0.65rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
       <div style="display: flex; gap: 0.5rem;">
@@ -97,81 +74,181 @@
     <section class="section-padding">
       <div class="container">
         <!-- Parent Header -->
-        <div class="card" style="margin-bottom: 2rem; border-color: var(--primary-light);">
-          <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem;">
-            <div class="flex items-center" style="gap: 1rem;">
+        <div class="card" style="margin-bottom: 2.5rem; border-color: var(--primary-light); padding: 1.5rem;">
+          <div class="flex items-center justify-between" style="flex-direction: column; align-items: stretch; gap: 1.5rem; @media (min-width: 768px) { flex-direction: row; align-items: center; }">
+            <div class="flex items-center" style="gap: 1.25rem;">
               <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80"
-                alt="Parent Avatar" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" />
+                alt="Parent Avatar" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-light);" />
               <div>
-                <h1 class="heading-md">Sarah Miller's Parent Portal</h1>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Subscription Plan: <strong
+                <h1 class="heading-md" style="margin-bottom: 0.25rem;">Sarah Miller's Parent Portal</h1>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Subscription: <strong
                     style="color: var(--primary);">Bright Scholar ($59/mo)</strong> | Active</p>
               </div>
             </div>
 
             <!-- Multi-Child Tab Switcher -->
-            <div class="flex" style="gap: 0.5rem;">
-              <button class="parent-child-tab-btn btn btn-primary btn-sm active" data-child-id="child-1">Maya (Grade
-                3)</button>
-              <button class="parent-child-tab-btn btn btn-outline btn-sm" data-child-id="child-2">Leo (Grade 1)</button>
+            <div class="flex" style="gap: 0.75rem;">
+              <button class="parent-child-tab-btn btn btn-primary active" data-child-id="child-1" style="padding: 0.75rem 1.25rem;">Maya (Grade 3)</button>
+              <button class="parent-child-tab-btn btn btn-outline" data-child-id="child-2" style="padding: 0.75rem 1.25rem;">Leo (Grade 1)</button>
             </div>
           </div>
         </div>
 
         <!-- Panel Child 1 (Maya) -->
         <div id="panel-child-1" class="parent-child-panel">
-          <div class="grid-4" style="margin-bottom: 2rem;">
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">142 Mins</div>
-              <div style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 600;">↑ 12% from last week</div>
-            </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">92.4%
+          
+          <!-- Key Metrics -->
+          <div class="grid-4" style="margin-bottom: 2.5rem; gap: 1.5rem;">
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">⏱️</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Learning Time</div>
               </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Passed 18 of 20 quizzes</div>
+              <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">142 Mins</div>
+              <div style="font-size: 0.85rem; color: var(--accent-emerald); font-weight: 600;">Awesome! ↑ 12% vs last week</div>
             </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Earned Star Coins</div>
-              <div class="flex items-center"
-                style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
-                  <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-                <span>480</span>
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">🎯</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Quiz Accuracy</div>
               </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Unlocked 4 Avatar items</div>
+              <div style="font-size: 2rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">92.4%</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Passed 18 of 20 quizzes</div>
             </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
-              <div class="flex items-center"
-                style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
-                  <path
-                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                </svg>
-                <span>7 Days</span>
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">⭐</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Star Coins</div>
               </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Record streak achieved!</div>
+              <div style="font-size: 2rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0;">480</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Unlocked 4 Avatar items</div>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">🔥</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Daily Streak</div>
+              </div>
+              <div style="font-size: 2rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0;">7 Days</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Record streak achieved!</div>
             </div>
           </div>
 
-          <div class="grid-2">
+          <!-- Learning Overview -->
+          <div class="grid-2" style="margin-bottom: 2.5rem; gap: 1.5rem;">
+            <!-- Subject Progress -->
+            <div class="card" style="padding: 1.5rem;">
+              <h3 class="heading-sm" style="margin-bottom: 1.25rem;">Subject Progress</h3>
+              <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div>
+                  <div class="flex justify-between" style="font-weight: 700; margin-bottom: 0.5rem;">
+                    <span>📐 Primary Mathematics</span>
+                    <span style="color: var(--primary);">78%</span>
+                  </div>
+                  <div style="width: 100%; height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden;">
+                    <div style="width: 78%; height: 100%; background: var(--primary); border-radius: 5px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between" style="font-weight: 700; margin-bottom: 0.5rem;">
+                    <span>📚 Phonics & Reading</span>
+                    <span style="color: var(--accent-emerald);">64%</span>
+                  </div>
+                  <div style="width: 100%; height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden;">
+                    <div style="width: 64%; height: 100%; background: var(--accent-emerald); border-radius: 5px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between" style="font-weight: 700; margin-bottom: 0.5rem;">
+                    <span>🔬 Science Explorers</span>
+                    <span style="color: var(--accent-amber);">85%</span>
+                  </div>
+                  <div style="width: 100%; height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden;">
+                    <div style="width: 85%; height: 100%; background: var(--accent-amber); border-radius: 5px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Weekly Activity -->
+            <div class="card" style="padding: 1.5rem;">
+              <h3 class="heading-sm" style="margin-bottom: 1.25rem;">Weekly Activity Log</h3>
+              <div style="display: flex; justify-content: space-between; align-items: flex-end; height: 150px; padding-top: 1rem;">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <div style="width: 20px; height: 40%; background: var(--primary); border-radius: 4px;"></div>
+                  <span style="font-size: 0.8rem; font-weight: 600;">Mon</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <div style="width: 20px; height: 60%; background: var(--primary); border-radius: 4px;"></div>
+                  <span style="font-size: 0.8rem; font-weight: 600;">Tue</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <div style="width: 20px; height: 80%; background: var(--primary); border-radius: 4px;"></div>
+                  <span style="font-size: 0.8rem; font-weight: 600;">Wed</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <div style="width: 20px; height: 50%; background: var(--primary); border-radius: 4px;"></div>
+                  <span style="font-size: 0.8rem; font-weight: 600;">Thu</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <div style="width: 20px; height: 90%; background: var(--primary); border-radius: 4px;"></div>
+                  <span style="font-size: 0.8rem; font-weight: 600;">Fri</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity Table -->
+          <div class="card" style="margin-bottom: 2.5rem; padding: 1.5rem;">
+            <h3 class="heading-sm" style="margin-bottom: 1.25rem;">Recent Activity</h3>
+            <div class="table-responsive-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Activity</th>
+                    <th>Score</th>
+                    <th>Time Spent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 1rem 0.75rem; font-weight: 600;">Today</td>
+                    <td style="padding: 1rem 0.75rem;"><span class="badge badge-primary">Mathematics</span></td>
+                    <td style="padding: 1rem 0.75rem; font-weight: 700;">Pirate Treasure: Multiplying by 8</td>
+                    <td style="padding: 1rem 0.75rem; font-weight: 800; color: var(--accent-emerald);">95%</td>
+                    <td style="padding: 1rem 0.75rem; color: var(--text-muted);">22 mins</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 1rem 0.75rem; font-weight: 600;">Yesterday</td>
+                    <td style="padding: 1rem 0.75rem;"><span class="badge badge-emerald">Phonics</span></td>
+                    <td style="padding: 1rem 0.75rem; font-weight: 700;">Silent K & G Detective</td>
+                    <td style="padding: 1rem 0.75rem; font-weight: 800; color: var(--accent-emerald);">90%</td>
+                    <td style="padding: 1rem 0.75rem; color: var(--text-muted);">18 mins</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 1rem 0.75rem; font-weight: 600;">Aug 12</td>
+                    <td style="padding: 1rem 0.75rem;"><span class="badge badge-amber">Science</span></td>
+                    <td style="padding: 1rem 0.75rem; font-weight: 700;">Solar System Exploration</td>
+                    <td style="padding: 1rem 0.75rem; font-weight: 800; color: var(--accent-emerald);">100%</td>
+                    <td style="padding: 1rem 0.75rem; color: var(--text-muted);">25 mins</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="grid-2" style="gap: 1.5rem;">
             <!-- Screen Time Control Card -->
-            <div class="card">
+            <div class="card" style="padding: 1.5rem;">
               <div class="flex items-center justify-between" style="margin-bottom: 1rem;">
                 <h3 class="heading-sm flex items-center" style="gap: 0.5rem;">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                  </svg>
-                  <span>Daily Screen-Time Limit Control</span>
+                  <span style="font-size: 1.25rem;">⏳</span>
+                  <span>Screen-Time Limit</span>
                 </h3>
                 <span id="screen-time-val" class="badge badge-primary">25 Mins/Day</span>
               </div>
-              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
                 Set maximum active learning minutes. Once reached, the student dashboard locks with a gentle rest
                 screen.
               </p>
@@ -180,17 +257,13 @@
             </div>
 
             <!-- Tutor Notes Log -->
-            <div class="card">
+            <div class="card" style="padding: 1.5rem;">
               <h3 class="heading-sm flex items-center" style="gap: 0.5rem; margin-bottom: 1rem;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                </svg>
-                <span>Tutor Feedback Log</span>
+                <span style="font-size: 1.25rem;">📝</span>
+                <span>Tutor Feedback</span>
               </h3>
-              <div
-                style="font-size: 0.9rem; color: var(--text-main); background: var(--bg-page); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">Tutor Emma Sterling
+              <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-main); background: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Tutor Emma Sterling
                   (Yesterday):</div>
                 "Maya demonstrated fantastic confidence with equivalent fractions today! She quickly solved visual 2/4
                 and 1/2 pizza problems. Recommended next step: times-table by 8."
@@ -201,37 +274,35 @@
 
         <!-- Panel Child 2 (Leo) -->
         <div id="panel-child-2" class="parent-child-panel hidden">
-          <div class="grid-4" style="margin-bottom: 2rem;">
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Weekly Learning Time</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">95 Mins</div>
-            </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Average Quiz Accuracy</div>
-              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">88.0%
+          <!-- Key Metrics -->
+          <div class="grid-4" style="margin-bottom: 2.5rem; gap: 1.5rem;">
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">⏱️</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Learning Time</div>
               </div>
+              <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;">95 Mins</div>
             </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Earned Star Coins</div>
-              <div class="flex items-center"
-                style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0; gap: 0.35rem;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#F59E0B">
-                  <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-                <span>310</span>
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">🎯</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Quiz Accuracy</div>
               </div>
+              <div style="font-size: 2rem; font-weight: 800; color: var(--accent-emerald); margin: 0.25rem 0;">88.0%</div>
             </div>
-            <div class="card">
-              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Active Daily Streak</div>
-              <div class="flex items-center"
-                style="font-size: 1.8rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0; gap: 0.35rem;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#EF4444">
-                  <path
-                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                </svg>
-                <span>4 Days</span>
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">⭐</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Star Coins</div>
               </div>
+              <div style="font-size: 2rem; font-weight: 800; color: var(--accent-amber); margin: 0.25rem 0;">310</div>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <div class="flex items-center" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.5rem;">🔥</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 700;">Daily Streak</div>
+              </div>
+              <div style="font-size: 2rem; font-weight: 800; color: #EF4444; margin: 0.25rem 0;">4 Days</div>
             </div>
           </div>
         </div>

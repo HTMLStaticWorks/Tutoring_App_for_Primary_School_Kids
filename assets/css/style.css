@@ -364,6 +364,7 @@ h6 {
   font-weight: 800;
   color: var(--text-main);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .logo-img {
@@ -639,13 +640,13 @@ h6 {
 
 @media (max-width: 480px) {
   .games-grid-2x2 {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.65rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
 
   .avatar-grid-2x2 {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.65rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
 }
 
@@ -1068,6 +1069,22 @@ h6 {
   gap: 0.65rem;
 }
 
+@media (max-width: 1100px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .desktop-only-actions {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1088,20 +1105,6 @@ h6 {
   html, body {
     overflow-x: hidden;
     width: 100%;
-  }
-
-  .nav-menu {
-    display: none;
-  }
-
-  .desktop-only-actions {
-    display: none !important;
-  }
-
-  .mobile-menu-btn {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
   }
 
   .grid-2,
@@ -1474,4 +1477,30 @@ p, span, h1, h2, h3, h4, h5, h6, a, div, label {
   gap: 1rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* --- Image fixes for tablet views --- */
+.card-img-wrapper {
+  height: auto !important;
+  aspect-ratio: 16 / 9; /* Provides consistent height without fixed pixels */
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Center last card in 3-card grid when wrapped to 2 columns (Tablet) */
+@media (min-width: 650px) and (max-width: 1100px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-3 > :nth-child(3):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.875rem); /* Keeps width consistent with the 2-column layout gap of 1.75rem */
+  }
 }

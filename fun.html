@@ -265,19 +265,19 @@
             <!-- Options populated dynamically by dashboard.js -->
           </div>
 
-          <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
-            <button id="quiz-hint-btn" class="btn btn-outline btn-sm flex items-center" style="gap: 0.35rem;">
+          <div style="margin-top: 1.25rem; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <button id="quiz-hint-btn" class="btn btn-outline btn-sm flex flex-nowrap items-center" style="gap: 0.35rem; flex-wrap: nowrap !important;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 18h6" />
                 <path d="M10 22h4" />
                 <path
                   d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.64 2.94 1.6 3.9.76.76 1.23 1.52 1.4 2.5" />
               </svg>
-              <span>View Hint</span>
+              <span style="white-space: nowrap;">View Hint</span>
             </button>
-            <div class="flex" style="gap: 0.5rem;">
-              <button id="quiz-prev-btn" class="btn btn-outline btn-sm">◄ Prev</button>
-              <button id="quiz-next-btn" class="btn btn-primary btn-sm">Next ►</button>
+            <div class="flex flex-nowrap" style="gap: 0.5rem; flex-wrap: nowrap !important;">
+              <button id="quiz-prev-btn" class="btn btn-outline btn-sm" style="white-space: nowrap;">◄ Prev</button>
+              <button id="quiz-next-btn" class="btn btn-primary btn-sm" style="white-space: nowrap;">Next ►</button>
             </div>
           </div>
 
